@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Thing 🎯</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/game.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold" href="/">
+            🎮 Guess the Thing
+        </a>
+
+        <!-- Right Side -->
+        <div class="d-flex align-items-center gap-3">
+            <!-- Leaderboard quick jump -->
+            <a href="#mainLeaderboard" class="btn btn-outline-light btn-sm d-none d-sm-inline-flex align-items-center gap-1">
+                🏆 Leaderboard
+            </a>
+
+            <!-- Theme Button -->
+            <button id="themeToggle" class="btn btn-outline-light btn-sm sfx-click">
+                ☀️ Light
+            </button>
+
+            <!-- Settings Dropdown -->
+            <div class="dropdown">
+                <button
+                    class="btn btn-outline-light btn-sm rounded-pill px-3 d-flex align-items-center gap-1 sfx-click"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false"
+                    title="Settings">
+                    <span id="sfxStatusIcon">🔊</span>
+                    <span>⚙️ Settings</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end settings-dropdown-panel p-3 shadow-lg">
+                    <h6 class="fw-bold text-white mb-3 border-bottom border-secondary-subtle pb-2">
+                        ⚙️ Game Settings
+                    </h6>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input sfx-click" type="checkbox" role="switch" id="settingMuteSfx">
+                        <label class="form-check-label small text-light" for="settingMuteSfx">
+                            🔇 Mute Sound Effects (SFX)
+                        </label>
+                    </div>
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input sfx-click" type="checkbox" role="switch" id="settingHideHowTo">
+                        <label class="form-check-label small text-light" for="settingHideHowTo">
+                            🙈 Hide "How to Play" Popup on Start
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Dropdown -->
+            <div class="dropdown">
+                <button
+                    class="btn btn-outline-light rounded-pill px-3 py-1 d-flex align-items-center gap-2 sfx-click"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span>👤</span>
+                    {% if current_user %}
+                        <span class="fw-bold small">{{ current_user.username }}</span>
+                    {% endif %}
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-end shadow-lg">
+                    {% if current_user %}
+                        <li>
+                            <h6 class="dropdown-header text-info">
+                                👋 {{ current_user.username }} ({{ current_user.best_score }} pts best)
+                            </h6>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#scoreHistoryModal">
+                                📜 My Score History ({{ current_user.total_games }})
+                            </button>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/profile">📊 Full Profile & Stats</a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="/rules">❓ Help</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="/logout">🚪 Logout</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <h6 class="dropdown-header">Account</h6>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                🔑 Login
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#signupModal">
+                                ✨ Sign Up
+                            </button>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/rules">❓ Help</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- FLASH MESSAGES -->
+<div class="container mt-3">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category if category != 'error' else 'danger' }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Guess the Thing 🎯</h1>
+    <p>
+        How well do you know your favorite movies, anime, objects, and games?
+    </p>
+</div>
+
+<!-- GAME SETUP -->
+<div class="container pb-5">
+    <form action="/start-game" method="POST" class="game-card mb-5">
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
+            <div>
+                <h3 class="section-title mb-1">
+                    🎮 Set Up Your Game
+                </h3>
+                <p class="text-secondary mb-0">
+                    Choose your category and game mode before you begin.
+                </p>
+            </div>
+
+            {% if current_user %}
+                <div class="user-status-pill d-flex align-items-center gap-2">
+                    <span>👤 <strong>{{ current_user.username }}</strong></span>
+                    <span class="badge bg-primary">{{ current_user.best_score }} Best</span>
+                    <button type="button" class="btn btn-sm btn-outline-info py-0 px-2" data-bs-toggle="modal" data-bs-target="#scoreHistoryModal">
+                        📜 History ({{ current_user.total_games }})
+                    </button>
+                </div>
+            {% else %}
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        🔑 Login
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#signupModal">
+                        ✨ Sign Up to Save History
+                    </button>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- CATEGORY -->
+        <h5 class="mt-4 mb-3">Choose a Category</h5>
+
+        <div class="row g-3">
+            <div class="col-6 col-md-4">
+                <label class="option w-100">
+                    <input type="radio" name="category" value="anime">
+                    <span class="option-icon">🎌</span>
+                    Anime
+                </label>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <label class="option w-100">
+                    <input type="radio" name="category" value="movies" checked>
+                    <span class="option-icon">🎬</span>
+                    Movies
+                </label>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <label class="option w-100">
+                    <input type="radio" name="category" value="superheroes">
+                    <span class="option-icon">🦸</span>
+                    Superheroes
+                </label>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <label class="option w-100">
+                    <input type="radio" name="category" value="games">
+                    <span class="option-icon">🎮</span>
+                    Games
+                </label>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <label class="option w-100">
+                    <input type="radio" name="category" value="characters">
+                    <span class="option-icon">👤</span>
+                    Characters
+                </label>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <label class="option w-100">
+                    <input type="radio" name="category" value="common_objects">
+                    <span class="option-icon">🔦</span>
+                    Common Object
+                </label>
+            </div>
+        </div>
+
+        <!-- GAME MODES -->
+        <h5 class="mt-5 mb-3">🎮 Choose Game Mode</h5>
+
+        <div class="row g-3">
+            <!-- CLASSIC -->
+            <div class="col-12 col-md-4">
+                <label class="option game-mode-card w-100 h-100">
+                    <input type="radio" name="gameMode" value="classic" checked>
+                    <span class="option-icon">🎯</span>
+                    <strong>Classic</strong>
+                    <small class="d-block text-secondary mt-1">
+                        Normal fun one
+                    </small>
+                </label>
+            </div>
+
+            <!-- TIMER -->
+            <div class="col-12 col-md-4">
+                <label class="option game-mode-card w-100 h-100">
+                    <input type="radio" name="gameMode" value="timer">
+                    <span class="option-icon">⏱️</span>
+                    <strong>Timer</strong>
+                    <small class="d-block text-secondary mt-1">
+                        For challenge
+                    </small>
+                </label>
+            </div>
+
+            <!-- RANDOM -->
+            <div class="col-12 col-md-4">
+                <label class="option game-mode-card w-100 h-100">
+                    <input type="radio" name="gameMode" value="random">
+                    <span class="option-icon">🎲</span>
+                    <strong>Random</strong>
+                    <small class="d-block text-secondary mt-1">
+                        A completely random category and mode
+                    </small>
+                </label>
+            </div>
+        </div>
+
+        <!-- START -->
+        <button type="submit" class="btn btn-primary start-btn sfx-submit" id="startGameBtn">
+            🚀 Start Game
+        </button>
+
+    </form>
+
+    <!-- FLOATING QUICK-JUMP TO START BUTTON (Auto-hides when Start button is in view so it never blocks options) -->
+    <button type="button" class="jump-to-start-fab sfx-click" id="jumpToStartFab" aria-label="Scroll straight to Start Game button">
+        <span class="jump-fab-arrow">⬇</span>
+        <span>Jump to Start</span>
+        <span>🚀</span>
+    </button>
+
+    <!-- =========================================================
+         🏆 REent-REMADE LEADERBOARD ON MAIN SCREEN
+         ========================================================= -->
+    <div class="game-card leaderboard-home-card" id="mainLeaderboard">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+            <div>
+                <h3 class="section-title mb-1">🏆 Hall of Fame Leaderboard</h3>
+                <p class="text-secondary small mb-0">
+                    Top players across Movies, Anime, Common Object, Superheroes, Games & Characters
+                </p>
+            </div>
+            <a href="/leaderboard" class="btn btn-outline-light btn-sm px-3">
+                View Full Leaderboard &rarr;
+            </a>
+        </div>
+
+        <!-- CATEGORY FILTER TABS (CLIENT-SIDE FILTER ON MAIN SCREEN) -->
+        <div class="d-flex flex-wrap gap-2 mb-4" id="homeLbFilterBar">
+            <button type="button" class="btn btn-sm btn-primary rounded-pill px-3 lb-filter-btn active" data-cat="all">
+                🌟 All
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 lb-filter-btn" data-cat="Movies">
+                🎬 Movies
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 lb-filter-btn" data-cat="Anime">
+                🎌 Anime
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 lb-filter-btn" data-cat="Common Object">
+                🔦 Common Object
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 lb-filter-btn" data-cat="Superheroes">
+                🦸 Superheroes
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 lb-filter-btn" data-cat="Games">
+                🎮 Games
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 lb-filter-btn" data-cat="Characters">
+                👤 Characters
+            </button>
+        </div>
+
+        {% if leaderboard_entries %}
+            <!-- TOP 3 PODIUM STRIP -->
+            <div class="row g-3 mb-4" id="homeLbPodium">
+                {% for entry in leaderboard_entries[:3] %}
+                    <div class="col-md-4">
+                        <div class="lb-podium-card rank-podium-{{ loop.index }}">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="fs-3">
+                                    {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% else %}🥉{% endif %}
+                                </span>
+                                <span class="badge bg-dark border border-secondary">{{ entry.category }}</span>
+                            </div>
+                            <h5 class="fw-bold mb-1 text-truncate">{{ entry.player_name }}</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="fs-5 fw-extrabold text-info">{{ entry.score }} pts</span>
+                                <span class="small text-warning fw-bold">🔥 {{ entry.streak }} streak</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- LEADERBOARD TABLE -->
+            <div class="table-responsive">
+                <table class="custom-table w-100" id="homeLbTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 70px;">Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                            <th>Category</th>
+                            <th>Mode</th>
+                            <th>Streak</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in leaderboard_entries %}
+                            <tr class="lb-row" data-category="{{ entry.category }}">
+                                <td>
+                                    {% if loop.index == 1 %}
+                                        <span class="rank-badge rank-1">🥇</span>
+                                    {% elif loop.index == 2 %}
+                                        <span class="rank-badge rank-2">🥈</span>
+                                    {% elif loop.index == 3 %}
+                                        <span class="rank-badge rank-3">🥉</span>
+                                    {% else %}
+                                        <span class="rank-badge rank-other">#{{ loop.index }}</span>
+                                    {% endif %}
+                                </td>
+                                <td class="fw-bold">
+                                    {{ entry.player_name }}
+                                    {% if current_user and current_user.username|lower == entry.player_name|lower %}
+                                        <span class="badge bg-info text-dark ms-1">YOU</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <span class="badge bg-primary-subtle text-primary fw-bold fs-6">
+                                        {{ entry.score }} pts
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-secondary-subtle text-secondary-emphasis">
+                                        {{ entry.category }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-dark border border-secondary">
+                                        {{ entry.game_mode or 'Classic' }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="text-warning small fw-bold">🔥 {{ entry.streak }}</span>
+                                </td>
+                                <td>
+                                    <span class="text-secondary small">{{ entry.date }}</span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="text-center py-4 text-secondary">
+                No scores recorded yet. Start a game to claim the #1 spot!
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content movie-modal-content">
+            <div class="modal-header border-bottom border-secondary-subtle">
+                <h5 class="modal-title fw-bold" id="loginModalLabel">🔑 Login to Your Account</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/login" method="POST">
+                <div class="modal-body p-4">
+                    <p class="text-secondary small mb-3">
+                        Log in to view your personal score history and automatically save every match to your account.
+                    </p>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-uppercase text-secondary">Username</label>
+                        <input type="text" name="username" class="form-control custom-input" placeholder="Enter your username" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label small fw-bold text-uppercase text-secondary">Password</label>
+                        <input type="password" name="password" class="form-control custom-input" placeholder="Enter your password" required>
+                    </div>
+                </div>
+                <div class="modal-footer border-top border-secondary-subtle d-flex justify-content-between">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#signupModal">
+                        Need an account? Sign Up
+                    </button>
+                    <button type="submit" class="btn btn-primary px-4 fw-bold">Login 🔑</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- SIGN UP MODAL -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content movie-modal-content">
+            <div class="modal-header border-bottom border-secondary-subtle">
+                <h5 class="modal-title fw-bold" id="signupModalLabel">✨ Create Player Account</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/signup" method="POST">
+                <div class="modal-body p-4">
+                    <p class="text-secondary small mb-3">
+                        Sign up to unlock your personal Score History tracker and automatic leaderboard entries!
+                    </p>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-uppercase text-secondary">Choose Username</label>
+                        <input type="text" name="username" class="form-control custom-input" placeholder="e.g. MovieMaster99" minlength="2" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label small fw-bold text-uppercase text-secondary">Choose Password</label>
+                        <input type="password" name="password" class="form-control custom-input" placeholder="At least 4 characters" minlength="4" required>
+                    </div>
+                </div>
+                <div class="modal-footer border-top border-secondary-subtle d-flex justify-content-between">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Already have an account? Login
+                    </button>
+                    <button type="submit" class="btn btn-primary px-4 fw-bold">Create Account ✨</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- SCORE HISTORY MODAL (FOR LOGGED-IN USER) -->
+{% if current_user %}
+<div class="modal fade" id="scoreHistoryModal" tabindex="-1" aria-labelledby="scoreHistoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content movie-modal-content">
+            <div class="modal-header border-bottom border-secondary-subtle">
+                <h5 class="modal-title fw-bold" id="scoreHistoryModalLabel">
+                    📜 {{ current_user.username }}'s Score History
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="row g-2 text-center mb-4">
+                    <div class="col-3">
+                        <div class="feature-card p-2">
+                            <small class="text-secondary d-block">GAMES</small>
+                            <strong class="fs-5 text-info">{{ current_user.total_games }}</strong>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-card p-2">
+                            <small class="text-secondary d-block">BEST SCORE</small>
+                            <strong class="fs-5 text-primary">{{ current_user.best_score }}</strong>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-card p-2">
+                            <small class="text-secondary d-block">BEST STREAK</small>
+                            <strong class="fs-5 text-warning">🔥 {{ current_user.best_streak }}</strong>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-card p-2">
+                            <small class="text-secondary d-block">ACCURACY</small>
+                            <strong class="fs-5 text-success">{{ current_user.avg_accuracy }}%</strong>
+                        </div>
+                    </div>
+                </div>
+
+                {% if current_user.history %}
+                    <div class="table-responsive">
+                        <table class="custom-table w-100">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Mode</th>
+                                    <th>Score</th>
+                                    <th>Accuracy</th>
+                                    <th>Streak</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for h in current_user.history %}
+                                    <tr>
+                                        <td class="small text-secondary">{{ h.date }}</td>
+                                        <td><span class="badge bg-secondary">{{ h.category }}</span></td>
+                                        <td><span class="badge bg-dark border border-secondary">{{ h.game_mode }}</span></td>
+                                        <td class="fw-bold text-info">{{ h.score }} pts</td>
+                                        <td>{{ h.correct_count }}/{{ h.total_questions }} ({{ h.accuracy }}%)</td>
+                                        <td class="text-warning fw-bold">🔥 {{ h.streak }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <p class="text-center text-secondary py-3 mb-0">
+                        You haven't finished a match yet. Play a game and your scores will automatically appear here!
+                    </p>
+                {% endif %}
+            </div>
+            <div class="modal-footer border-top border-secondary-subtle">
+                <a href="/profile" class="btn btn-outline-info btn-sm">Open Full Profile Page</a>
+                <button type="button" class="btn btn-primary btn-sm px-4" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<footer>
+    Guess the Thing © 2026
+</footer>
+
+</body>
+</html>

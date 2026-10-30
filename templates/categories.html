@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %}Trivia Universes - Guess the Thing 🎯{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>🎨 Trivia Universes</h1>
+    <p>
+        Explore the diverse worlds waiting inside Guess the Thing. Choose a universe to jump straight into action!
+    </p>
+</div>
+
+<div class="container pb-5">
+    <div class="row g-4" style="max-width: 960px; margin: 0 auto;">
+        
+        <!-- ANIME -->
+        <div class="col-md-6 col-lg-4">
+            <div class="game-card h-100 d-flex flex-column justify-content-between p-4">
+                <div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="fs-1">🎌</span>
+                        <span class="badge bg-danger-subtle text-danger fw-bold">Popular</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">Anime & Manga</h4>
+                    <p class="text-secondary small mb-3">
+                        From Saiyan warriors to Survey Corps scouts, pirate crews, and Shinigami notebooks. Test your anime IQ!
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle mb-3">
+                        <span class="text-info fw-bold">Sample:</span> <em>"An orange gi holds an alien monkey god..."</em>
+                    </div>
+                </div>
+                <form action="/start-game" method="POST">
+                    <input type="hidden" name="category" value="anime">
+                    <input type="hidden" name="difficulty" value="medium">
+                    <input type="hidden" name="clue" value="normal">
+                    <button type="submit" class="btn btn-outline-primary w-100 fw-bold">
+                        Play Anime 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- MOVIES -->
+        <div class="col-md-6 col-lg-4">
+            <div class="game-card h-100 d-flex flex-column justify-content-between p-4">
+                <div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="fs-1">🎬</span>
+                        <span class="badge bg-warning-subtle text-warning fw-bold">Cinema</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">Movies & Cinema</h4>
+                    <p class="text-secondary small mb-3">
+                        Dream heists, dinosaur islands, the matrix, and timeless Hollywood masterworks from Spielberg, Nolan, & Cameron.
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle mb-3">
+                        <span class="text-info fw-bold">Sample:</span> <em>"A spinning pewter totem in recursive dreams..."</em>
+                    </div>
+                </div>
+                <form action="/start-game" method="POST">
+                    <input type="hidden" name="category" value="movies">
+                    <input type="hidden" name="difficulty" value="medium">
+                    <input type="hidden" name="clue" value="normal">
+                    <button type="submit" class="btn btn-outline-primary w-100 fw-bold">
+                        Play Movies 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- SUPERHEROES -->
+        <div class="col-md-6 col-lg-4">
+            <div class="game-card h-100 d-flex flex-column justify-content-between p-4">
+                <div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="fs-1">🦸</span>
+                        <span class="badge bg-primary-subtle text-primary fw-bold">Comic Lore</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">Superheroes</h4>
+                    <p class="text-secondary small mb-3">
+                        Marvel & DC champions, caped crusaders, web-slingers, Amazonian warriors, and mutant berserkers.
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle mb-3">
+                        <span class="text-info fw-bold">Sample:</span> <em>"Radioactive arachnid bite in Queens..."</em>
+                    </div>
+                </div>
+                <form action="/start-game" method="POST">
+                    <input type="hidden" name="category" value="superheroes">
+                    <input type="hidden" name="difficulty" value="medium">
+                    <input type="hidden" name="clue" value="normal">
+                    <button type="submit" class="btn btn-outline-primary w-100 fw-bold">
+                        Play Superheroes 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- GAMES -->
+        <div class="col-md-6 col-lg-4">
+            <div class="game-card h-100 d-flex flex-column justify-content-between p-4">
+                <div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="fs-1">🎮</span>
+                        <span class="badge bg-success-subtle text-success fw-bold">Arcade & PC</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">Games & Gaming</h4>
+                    <p class="text-secondary small mb-3">
+                        Voxel worlds, the Master Sword, Aperture Science portals, Lands Between, and yellow dot-eaters.
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle mb-3">
+                        <span class="text-info fw-bold">Sample:</span> <em>"Voxel paradise with green hissing creepers..."</em>
+                    </div>
+                </div>
+                <form action="/start-game" method="POST">
+                    <input type="hidden" name="category" value="games">
+                    <input type="hidden" name="difficulty" value="medium">
+                    <input type="hidden" name="clue" value="normal">
+                    <button type="submit" class="btn btn-outline-primary w-100 fw-bold">
+                        Play Games 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- CHARACTERS -->
+        <div class="col-md-6 col-lg-4">
+            <div class="game-card h-100 d-flex flex-column justify-content-between p-4">
+                <div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="fs-1">👤</span>
+                        <span class="badge bg-info-subtle text-info fw-bold">Legends</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">Iconic Characters</h4>
+                    <p class="text-secondary small mb-3">
+                        Baker Street detectives, wizards with lightning scars, Sith Lords, and swaggering pirate captains.
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle mb-3">
+                        <span class="text-info fw-bold">Sample:</span> <em>"221B Baker Street consulting detective..."</em>
+                    </div>
+                </div>
+                <form action="/start-game" method="POST">
+                    <input type="hidden" name="category" value="characters">
+                    <input type="hidden" name="difficulty" value="medium">
+                    <input type="hidden" name="clue" value="normal">
+                    <button type="submit" class="btn btn-outline-primary w-100 fw-bold">
+                        Play Characters 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- COMMON OBJECTS -->
+        <div class="col-md-6 col-lg-4">
+            <div class="game-card h-100 d-flex flex-column justify-content-between p-4">
+                <div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="fs-1">🔦</span>
+                        <span class="badge bg-warning-subtle text-warning fw-bold">Silhouette</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">Common Object</h4>
+                    <p class="text-secondary small mb-3">
+                        Starts with a mystery black silhouette of an everyday object plus progressive text hints and attribute clues!
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle mb-3">
+                        <span class="text-info fw-bold">Sample:</span> <em>"Black silhouette + everyday item clues..."</em>
+                    </div>
+                </div>
+                <form action="/start-game" method="POST">
+                    <input type="hidden" name="category" value="common_objects">
+                    <input type="hidden" name="difficulty" value="medium">
+                    <input type="hidden" name="clue" value="normal">
+                    <button type="submit" class="btn btn-primary w-100 fw-bold">
+                        Play Common Object 🔦
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+
+# Secret API keys
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Local user information
+data/users.json
+data/leaderboard.json
+
+# Editor files
+.vscode/

@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Leaderboard & Hall of Fame - Guess the Thing 🎯{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>🏆 Hall of Fame Leaderboard</h1>
+    <p>
+        The greatest minds and fastest guessers across every category and game mode.
+    </p>
+</div>
+
+<div class="container pb-5">
+    <div class="game-card" style="max-width: 940px;">
+        
+        <!-- CATEGORY FILTER PILLS -->
+        <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center">
+            <a href="/leaderboard" class="btn btn-sm {% if not current_cat %}btn-primary{% else %}btn-outline-secondary{% endif %} rounded-pill px-3">
+                🌟 All Universes
+            </a>
+            <a href="/leaderboard?cat=Movies" class="btn btn-sm {% if current_cat == 'Movies' %}btn-primary{% else %}btn-outline-secondary{% endif %} rounded-pill px-3">
+                🎬 Movies
+            </a>
+            <a href="/leaderboard?cat=Anime" class="btn btn-sm {% if current_cat == 'Anime' %}btn-primary{% else %}btn-outline-secondary{% endif %} rounded-pill px-3">
+                🎌 Anime
+            </a>
+            <a href="/leaderboard?cat=Common Object" class="btn btn-sm {% if current_cat == 'Common Object' %}btn-primary{% else %}btn-outline-secondary{% endif %} rounded-pill px-3">
+                🔦 Common Object
+            </a>
+            <a href="/leaderboard?cat=Superheroes" class="btn btn-sm {% if current_cat == 'Superheroes' %}btn-primary{% else %}btn-outline-secondary{% endif %} rounded-pill px-3">
+                🦸 Superheroes
+            </a>
+            <a href="/leaderboard?cat=Games" class="btn btn-sm {% if current_cat == 'Games' %}btn-primary{% else %}btn-outline-secondary{% endif %} rounded-pill px-3">
+                🎮 Games
+            </a>
+            <a href="/leaderboard?cat=Characters" class="btn btn-sm {% if current_cat == 'Characters' %}btn-primary{% else %}btn-outline-secondary{% endif %} rounded-pill px-3">
+                👤 Characters
+            </a>
+        </div>
+
+        {% if entries %}
+            <!-- TOP 3 PODIUM -->
+            {% if not current_cat and entries|length >= 3 %}
+            <div class="row g-3 mb-4">
+                {% for entry in entries[:3] %}
+                    <div class="col-md-4">
+                        <div class="lb-podium-card rank-podium-{{ loop.index }}">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="fs-3">
+                                    {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% else %}🥉{% endif %}
+                                </span>
+                                <span class="badge bg-dark border border-secondary">{{ entry.category }}</span>
+                            </div>
+                            <h5 class="fw-bold mb-1 text-truncate">{{ entry.player_name }}</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="fs-5 fw-extrabold text-info">{{ entry.score }} pts</span>
+                                <span class="small text-warning fw-bold">🔥 {{ entry.streak }} streak</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- LEADERBOARD TABLE -->
+            <div class="table-responsive">
+                <table class="custom-table w-100">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                            <th>Category</th>
+                            <th>Game Mode</th>
+                            <th>Streak</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in entries %}
+                            <tr>
+                                <td>
+                                    {% if loop.index == 1 %}
+                                        <span class="rank-badge rank-1">🥇</span>
+                                    {% elif loop.index == 2 %}
+                                        <span class="rank-badge rank-2">🥈</span>
+                                    {% elif loop.index == 3 %}
+                                        <span class="rank-badge rank-3">🥉</span>
+                                    {% else %}
+                                        <span class="rank-badge rank-other">#{{ loop.index }}</span>
+                                    {% endif %}
+                                </td>
+                                <td class="fw-bold">
+                                    {{ entry.player_name }}
+                                    {% if current_user and current_user.username|lower == entry.player_name|lower %}
+                                        <span class="badge bg-info text-dark ms-1">YOU</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <span class="badge bg-primary-subtle text-primary fw-bold fs-6">
+                                        {{ entry.score }} pts
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-secondary-subtle text-secondary-emphasis">{{ entry.category }}</span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-dark border border-secondary">
+                                        {{ entry.game_mode or 'Classic' }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="text-warning small fw-bold">🔥 {{ entry.streak }}</span>
+                                </td>
+                                <td>
+                                    <span class="text-secondary small">{{ entry.date }}</span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="text-center py-5">
+                <div class="fs-1 mb-2">🏅</div>
+                <h5 class="fw-bold">No High Scores Yet in this Category!</h5>
+                <p class="text-secondary">Be the first player to etch your name into this leaderboard.</p>
+                <a href="/" class="btn btn-primary px-4 py-2 mt-2 fw-bold">Play Now</a>
+            </div>
+        {% endif %}
+
+        <!-- PLAY BUTTON CTA -->
+        <div class="text-center mt-4 pt-3 border-top border-secondary-subtle">
+            <a href="/" class="btn btn-primary px-5 py-3 fw-bold fs-5">
+                🚀 Play Now & Beat the Record
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

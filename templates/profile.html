@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}{{ user.username }}'s Score History - Guess the Thing 🎯{% endblock %}
+
+{% block content %}
+<div class="hero pb-2">
+    <h1>👤 {{ user.username }}'s Profile</h1>
+    <p>Member since {{ user.joined }} • Personal Score History & Career Stats</p>
+</div>
+
+<div class="container pb-5">
+    <div class="game-card" style="max-width: 920px;">
+
+        <!-- USER CAREER SUMMARY STATS -->
+        <div class="row g-3 text-center mb-4">
+            <div class="col-6 col-md-3">
+                <div class="feature-card p-3">
+                    <span class="text-secondary small fw-bold d-block mb-1">GAMES PLAYED</span>
+                    <span class="fs-3 fw-bold text-info">{{ user.total_games }}</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="feature-card p-3">
+                    <span class="text-secondary small fw-bold d-block mb-1">BEST SCORE</span>
+                    <span class="fs-3 fw-bold text-primary">{{ user.best_score }} pts</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="feature-card p-3">
+                    <span class="text-secondary small fw-bold d-block mb-1">BEST STREAK</span>
+                    <span class="fs-3 fw-bold text-warning">🔥 {{ user.best_streak }}</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="feature-card p-3">
+                    <span class="text-secondary small fw-bold d-block mb-1">AVG ACCURACY</span>
+                    <span class="fs-3 fw-bold text-success">{{ user.avg_accuracy }}%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <h4 class="fw-bold mb-0">📜 History of Scores</h4>
+            <a href="/" class="btn btn-primary btn-sm px-3 fw-bold">🎮 Play New Match</a>
+        </div>
+
+        {% if user.history %}
+            <div class="table-responsive">
+                <table class="custom-table w-100">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Mode</th>
+                            <th>Score</th>
+                            <th>Solved</th>
+                            <th>Streak</th>
+                            <th>Rank Earned</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for match in user.history %}
+                            <tr>
+                                <td class="text-secondary fw-bold">{{ loop.index }}</td>
+                                <td class="text-secondary small">{{ match.date }}</td>
+                                <td>
+                                    <span class="badge bg-secondary-subtle text-secondary-emphasis">
+                                        {{ match.category }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-dark border border-secondary">
+                                        {{ match.game_mode }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-primary-subtle text-primary fw-bold fs-6">
+                                        {{ match.score }} pts
+                                    </span>
+                                </td>
+                                <td class="fw-semibold">
+                                    {{ match.correct_count }}/{{ match.total_questions }} ({{ match.accuracy }}%)
+                                </td>
+                                <td class="text-warning fw-bold">🔥 {{ match.streak }}</td>
+                                <td class="small">{{ match.rank_title }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="text-center py-5">
+                <div class="fs-1 mb-2">🎯</div>
+                <h5 class="fw-bold">No Matches Recorded Yet!</h5>
+                <p class="text-secondary">Start a game and finish a round to automatically record your score history here.</p>
+                <a href="/" class="btn btn-primary px-4 py-2 mt-2 fw-bold">🚀 Start First Game</a>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

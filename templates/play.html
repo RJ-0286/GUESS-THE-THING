@@ -1,0 +1,539 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Guess the Thing 🎯 — Round {{ current_round }} of {{ total_rounds }}
+{% endblock %}
+
+{% block content %}
+
+{% set cat = question.category %}
+{% set is_movie = (cat == 'movies') %}
+{% set is_anime = (cat == 'anime') %}
+{% set is_object = (cat == 'common_objects') %}
+
+{% if is_movie %}
+    {% set cat_title = "🎬 Movies" %}
+    {% set item_noun = "Movie" %}
+    {% set col1_label = "Year" %}
+    {% set col2_label = "Director" %}
+    {% set col3_label = "Actor" %}
+    {% set col4_label = "Rated" %}
+    {% set col5_label = "Genres" %}
+    {% set col6_label = "Studio" %}
+{% elif is_anime %}
+    {% set cat_title = "🎌 Anime" %}
+    {% set item_noun = "Anime" %}
+    {% set col1_label = "Year" %}
+    {% set col2_label = "Creator" %}
+    {% set col3_label = "Main Char" %}
+    {% set col4_label = "Rated" %}
+    {% set col5_label = "Genres" %}
+    {% set col6_label = "Studio" %}
+{% elif is_object %}
+    {% set cat_title = "🔦 Common Object" %}
+    {% set item_noun = "Object" %}
+    {% set col1_label = "Era / Year" %}
+    {% set col2_label = "Room / Area" %}
+    {% set col3_label = "Material" %}
+    {% set col4_label = "Power" %}
+    {% set col5_label = "Use" %}
+    {% set col6_label = "Size" %}
+{% elif cat == 'superheroes' %}
+    {% set cat_title = "🦸 Superheroes" %}
+    {% set item_noun = "Superhero" %}
+    {% set col1_label = "Debut Year" %}
+    {% set col2_label = "Publisher" %}
+    {% set col3_label = "Alter Ego" %}
+    {% set col4_label = "Origin" %}
+    {% set col5_label = "Role / Team" %}
+    {% set col6_label = "Base" %}
+{% elif cat == 'games' %}
+    {% set cat_title = "🎮 Games" %}
+    {% set item_noun = "Game" %}
+    {% set col1_label = "Year" %}
+    {% set col2_label = "Developer" %}
+    {% set col3_label = "Protagonist" %}
+    {% set col4_label = "Platform" %}
+    {% set col5_label = "Genres" %}
+    {% set col6_label = "Rating" %}
+{% else %}
+    {% set cat_title = "👤 Characters" %}
+    {% set item_noun = "Character" %}
+    {% set col1_label = "Debut Year" %}
+    {% set col2_label = "Medium" %}
+    {% set col3_label = "Universe" %}
+    {% set col4_label = "Role / Type" %}
+    {% set col5_label = "Genre" %}
+    {% set col6_label = "Creator" %}
+{% endif %}
+
+<!-- Build the ordered list of single clues that shift after each wrong guess -->
+{% set clue_pool = [] %}
+{% if question.tips %}
+    {% for t in question.tips %}
+        {% set _ = clue_pool.append(t) %}
+    {% endfor %}
+{% endif %}
+{% if question.normal_clue and question.normal_clue not in clue_pool %}
+    {% set _ = clue_pool.append(question.normal_clue) %}
+{% endif %}
+{% if question.progressive_clues %}
+    {% for pc in question.progressive_clues %}
+        {% if pc not in clue_pool %}
+            {% set _ = clue_pool.append(pc) %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% if question.cryptic_clue and question.cryptic_clue not in clue_pool %}
+    {% set _ = clue_pool.append(question.cryptic_clue) %}
+{% endif %}
+
+<!-- =========================================================
+     CLEAN IN-GAME ARENA
+     ========================================================= -->
+<div class="movie-arena-wrapper" id="movieArena"
+     data-category="{{ cat }}"
+     data-auto-open-instructions="{{ 'true' if (show_instructions or (current_round == 1 and tries_used == 0 and not round_result)) else 'false' }}"
+     data-round-state="{{ 'win' if (round_result and round_result.is_correct) else ('loss' if round_result else ('wrong_try' if tries_used > 0 else 'start')) }}">
+
+    <!-- CLEAN TOP HUD BAR: HOME (LEFT) • HUD STATS (CENTER) • HOW TO PLAY & SETTINGS (RIGHT) -->
+    <header class="movie-top-bar">
+        <a href="/" class="movie-corner-btn movie-home-btn sfx-click" title="Back to Home">
+            🏠 Home
+        </a>
+
+        <div class="hud-center-strip">
+            <span class="hud-item fw-bold text-white">{{ cat_title }}</span>
+            <span class="hud-divider">•</span>
+            <span class="hud-item">Round <strong>{{ current_round }}/{{ total_rounds }}</strong></span>
+            <span class="hud-divider">•</span>
+            <span class="hud-item text-warning">🔥 <strong>{{ streak }}</strong></span>
+            <span class="hud-divider">•</span>
+            <span class="hud-item text-info">⭐ <strong>{{ score }}</strong></span>
+            {% if game_mode == 'timer' %}
+                <span class="hud-divider">•</span>
+                <span class="hud-item text-warning fw-bold" id="roundTimerBadge" data-timer-active="{{ 'false' if round_result else 'true' }}">
+                    ⏱️ <span id="roundTimerValue">60</span>s
+                </span>
+            {% endif %}
+        </div>
+
+        <!-- TOP RIGHT: HOW TO PLAY + SETTINGS DROPDOWN -->
+        <div class="d-flex align-items-center gap-2">
+            <button type="button" id="openInstructionsBtn" class="movie-corner-btn movie-help-btn sfx-click" data-bs-toggle="modal" data-bs-target="#howToPlayModal">
+                📖 How to Play
+            </button>
+
+            <div class="dropdown">
+                <button type="button" class="movie-corner-btn movie-home-btn sfx-click" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" title="Game Settings">
+                    <span id="sfxStatusIcon">🔊</span> ⚙️ Settings
+                </button>
+                <div class="dropdown-menu dropdown-menu-end settings-dropdown-panel p-3 shadow-lg">
+                    <h6 class="fw-bold text-white mb-3 border-bottom border-secondary-subtle pb-2">
+                        ⚙️ Game Settings
+                    </h6>
+
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input sfx-click" type="checkbox" role="switch" id="settingMuteSfx">
+                        <label class="form-check-label small text-light" for="settingMuteSfx">
+                            🔇 Mute Sound Effects (SFX)
+                        </label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input sfx-click" type="checkbox" role="switch" id="settingHideHowTo">
+                        <label class="form-check-label small text-light" for="settingHideHowTo">
+                            🙈 Hide "How to Play" Popup on Start
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container py-3">
+        <div class="game-card movie-game-card">
+
+            <!-- COMPACT STATUS HEADER: 5 TRY DOTS + CLUE STATE -->
+            <div class="arena-status-row">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="small text-secondary fw-semibold">Tries:</span>
+                    <div class="try-dots">
+                        {% for i in range(max_attempts) %}
+                            {% if i < tries_used %}
+                                <span class="try-dot used" title="Try {{ i + 1 }} used">✕</span>
+                            {% elif i == tries_used and not round_result %}
+                                <span class="try-dot current" title="Current Try {{ i + 1 }}">{{ i + 1 }}</span>
+                            {% elif i == 4 %}
+                                <span class="try-dot final-reveal" title="Try 5 (Full Reveal)">🔓</span>
+                            {% else %}
+                                <span class="try-dot active" title="Try {{ i + 1 }}">{{ i + 1 }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="arena-clue-status">
+                    {% if tries_used < 4 and not round_result %}
+                        {% if is_object %}
+                            <span class="badge-clean">⬛ Silhouette Mode • Unlocks Color on Try 5</span>
+                        {% else %}
+                            <span class="badge-clean">🔒 Blurred Clue • Unblurs after 4 tries</span>
+                        {% endif %}
+                    {% else %}
+                        <span class="badge-clean revealed">🔓 Full Clue Revealed</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- VISUAL CLUE STAGE -->
+            {% set is_image_revealed = (tries_used >= 4) or (round_result is not none) %}
+            <div class="movie-image-clue-stage">
+                <div class="movie-poster-frame {% if is_object %}silhouette-stage{% endif %} {% if is_image_revealed %}is-revealed{% else %}is-blurred{% endif %}" id="moviePosterFrame">
+                    <img
+                        src="/movie-poster/{{ question.id }}"
+                        alt="Mystery {{ item_noun }} Clue"
+                        class="movie-clue-img {% if is_image_revealed %}revealed{% elif is_object %}black-silhouette{% else %}full-blur{% endif %}"
+                        id="movieClueImg"
+                    >
+                    <div class="clue-corner-tag">
+                        {% if not is_image_revealed %}
+                            {% if is_object %}
+                                ⬛ Black Silhouette • Try {{ tries_used + 1 }}/{{ max_attempts }}
+                            {% else %}
+                                🔒 Blur Clue • Try {{ tries_used + 1 }}/{{ max_attempts }}
+                            {% endif %}
+                        {% else %}
+                            🔓 {{ item_noun }} Revealed
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================================
+                 SINGLE SHIFTING CLUE BOX (LOCATED ABOVE THE DROPDOWN!)
+                 - For Common Objects on Try 1: Silhouette only notice.
+                 - Otherwise: Displays ONLY 1 active clue ("CLUE 1", then shifts to "CLUE 2" after wrong guess, etc.)
+                 ========================================================= -->
+            {% if is_object and tries_used == 0 and not round_result %}
+                <div class="silhouette-only-notice">
+                    <span>⬛ <strong>Try 1 — Silhouette Only:</strong> Guess from the black silhouette first! <strong>CLUE 1</strong> unlocks after your first guess.</span>
+                </div>
+            {% else %}
+                {% set active_clue_idx = (tries_used - 1) if is_object else tries_used %}
+                {% if active_clue_idx < 0 %}
+                    {% set active_clue_idx = 0 %}
+                {% endif %}
+                {% if active_clue_idx >= (clue_pool|length) %}
+                    {% set active_clue_idx = (clue_pool|length) - 1 %}
+                {% endif %}
+                {% set active_clue_num = active_clue_idx + 1 %}
+                {% set active_clue_text = clue_pool[active_clue_idx] if clue_pool else question.normal_clue %}
+
+                <div class="single-clue-banner mb-3" id="singleClueBanner" data-active-clue-index="{{ active_clue_idx }}" data-unlocked-count="{{ active_clue_num }}">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-1">
+                        <div class="d-flex align-items-center flex-wrap gap-2">
+                            <!-- Current Clue Badge + Interactive Unlocked Clue Switcher -->
+                            <span class="clue-number-badge" id="activeClueBadge">💡 CLUE {{ active_clue_num }}</span>
+
+                            {% if active_clue_num > 1 %}
+                                <div class="clue-history-switcher d-inline-flex align-items-center gap-1" role="tablist" aria-label="Unlocked Clues">
+                                    <button type="button" class="clue-nav-arrow sfx-click" id="prevClueBtn" title="See Previous Clue">
+                                        ◀
+                                    </button>
+                                    {% for idx in range(active_clue_num) %}
+                                        <button
+                                            type="button"
+                                            class="clue-tab-pill sfx-click {% if idx == active_clue_idx %}active{% endif %}"
+                                            data-clue-idx="{{ idx }}"
+                                            data-clue-num="{{ idx + 1 }}"
+                                            data-clue-text="{{ clue_pool[idx]|e }}"
+                                        >
+                                            Clue {{ idx + 1 }}
+                                        </button>
+                                    {% endfor %}
+                                    <button type="button" class="clue-nav-arrow sfx-click" id="nextClueBtn" title="See Next Clue">
+                                        ▶
+                                    </button>
+                                </div>
+                            {% else %}
+                                <span class="small text-secondary">
+                                    (Next clue unlocks after a wrong guess)
+                                </span>
+                            {% endif %}
+                        </div>
+
+                        <button type="button" id="revealHintBtn" class="btn-subtle sfx-click">
+                            🔤 Letter Pattern
+                        </button>
+                    </div>
+
+                    <p class="single-clue-text mb-0" id="singleClueText">{{ active_clue_text }}</p>
+
+                    <div id="letterHintBox" class="letter-hint-box d-none mt-2 mb-0">
+                        {{ question.letter_hint }}
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- ROUND RESULT BANNER OR GUESS INPUT BOX -->
+            {% if round_result %}
+                <div class="round-result-banner {% if round_result.is_correct %}is-win{% else %}is-loss{% endif %}">
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                        <div>
+                            <div class="small text-uppercase fw-bold opacity-75 mb-1">
+                                {% if round_result.is_correct %}🎉 Correct Answer! (+{{ round_result.points_earned }} pts){% else %}💡 Round Over — Secret Answer{% endif %}
+                            </div>
+                            <h4 class="fw-extrabold mb-0 text-white">{{ question.name }}</h4>
+                        </div>
+
+                        <div>
+                            {% if current_round < total_rounds %}
+                                <a href="/next-question" class="btn btn-primary px-4 py-2 fw-bold sfx-click">
+                                    Next {{ item_noun }} &rarr;
+                                </a>
+                            {% else %}
+                                <a href="/results" class="btn btn-primary px-4 py-2 fw-bold sfx-click">
+                                    Final Results 🏆
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% if question.fun_fact %}
+                        <div class="small text-secondary mt-2 pt-2 border-top border-secondary-subtle">
+                            <strong class="text-warning">Fun Fact:</strong> {{ question.fun_fact }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% else %}
+                <form action="/submit-guess" method="POST" id="movieGuessForm" class="clean-guess-form">
+                    <div class="autocomplete-wrapper position-relative">
+                        <div class="clean-input-bar">
+                            <span class="search-icon">🔍</span>
+                            <input
+                                type="text"
+                                id="guessInput"
+                                name="guess"
+                                class="clean-guess-input"
+                                placeholder="Start typing {{ item_noun|lower }} name (Try {{ tries_used + 1 }} of {{ max_attempts }})..."
+                                autocomplete="off"
+                                required
+                            >
+                            <button type="submit" class="btn btn-primary clean-submit-btn sfx-submit">
+                                Guess 🎯
+                            </button>
+                        </div>
+
+                        <!-- AUTO-HELP DROPDOWN LIST (Only opens when user types) -->
+                        <div id="movieAutocompleteList" class="movie-autocomplete-dropdown d-none" role="listbox" aria-label="Suggestions"></div>
+                    </div>
+
+                    <div class="clean-form-footer">
+                        <div class="d-flex align-items-center gap-3 small text-secondary">
+                            <span><span class="legend-dot green"></span> Exact</span>
+                            <span><span class="legend-dot yellow"></span> Close</span>
+                            <span><span class="legend-dot wrong"></span> Miss</span>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="submit" formaction="/skip-question" formnovalidate class="btn-subtle sfx-click" onclick="return confirm('Skip this round?');">
+                                ⏭️ Skip
+                            </button>
+                            <button type="submit" formaction="/reveal-question" formnovalidate class="btn-subtle text-danger sfx-click" onclick="return confirm('Give up and reveal the answer?');">
+                                🏳️ Give Up
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            {% endif %}
+
+            <!-- 6-COLUMN ATTRIBUTE COMPARISON BOARD -->
+            <div class="movie-comparison-section">
+                <div class="movie-grid-header d-none d-md-grid">
+                    <div>{{ col1_label }}</div>
+                    <div>{{ col2_label }}</div>
+                    <div>{{ col3_label }}</div>
+                    <div>{{ col4_label }}</div>
+                    <div>{{ col5_label }}</div>
+                    <div>{{ col6_label }}</div>
+                </div>
+
+                {% if round_guesses %}
+                    <div class="movie-guesses-list">
+                        {% for g in round_guesses|reverse %}
+                            <div class="movie-guess-card animate-pop">
+                                <div class="movie-guess-title-bar">
+                                    <span class="guess-num-pill">#{{ loop.revindex }}</span>
+                                    <strong class="text-white">{{ g.guess_name }}</strong>
+                                    {% if g.is_correct %}
+                                        <span class="badge bg-success ms-auto">✓ MATCH</span>
+                                    {% endif %}
+                                </div>
+
+                                <div class="movie-attributes-grid">
+                                    <div class="attr-tile tile-{{ g.year_status }}">
+                                        <span class="attr-label">{{ col1_label }}</span>
+                                        <span class="attr-value">{{ g.year }}</span>
+                                        <span class="attr-subbadge">{{ g.year_hint }}</span>
+                                    </div>
+
+                                    <div class="attr-tile tile-{{ g.director_status }}">
+                                        <span class="attr-label">{{ col2_label }}</span>
+                                        <span class="attr-value">{{ g.director }}</span>
+                                        <span class="attr-subbadge">{% if g.director_status == 'green' %}✓{% else %}✕{% endif %}</span>
+                                    </div>
+
+                                    <div class="attr-tile tile-{{ g.actor_status }}">
+                                        <span class="attr-label">{{ col3_label }}</span>
+                                        <span class="attr-value">{{ g.actor }}</span>
+                                        <span class="attr-subbadge">{% if g.actor_status == 'green' %}✓{% else %}✕{% endif %}</span>
+                                    </div>
+
+                                    <div class="attr-tile tile-{{ g.rated_status }}">
+                                        <span class="attr-label">{{ col4_label }}</span>
+                                        <span class="attr-value">{{ g.rated }}</span>
+                                        <span class="attr-subbadge">{% if g.rated_status == 'green' %}✓{% else %}✕{% endif %}</span>
+                                    </div>
+
+                                    <div class="attr-tile tile-{{ g.genres_status }}">
+                                        <span class="attr-label">{{ col5_label }}</span>
+                                        <span class="attr-value">{{ g.genres }}</span>
+                                        <span class="attr-subbadge">{% if g.genres_status == 'green' %}✓{% elif g.genres_status == 'yellow' %}~{% else %}✕{% endif %}</span>
+                                    </div>
+
+                                    <div class="attr-tile tile-{{ g.studio_status }}">
+                                        <span class="attr-label">{{ col6_label }}</span>
+                                        <span class="attr-value">{{ g.studio }}</span>
+                                        <span class="attr-subbadge">{% if g.studio_status == 'green' %}✓{% else %}✕{% endif %}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="movie-empty-grid">
+                        <div class="attr-tile tile-placeholder">
+                            <span class="attr-label">{{ col1_label }}</span>
+                            <span class="attr-value">↑ / ↓</span>
+                        </div>
+                        <div class="attr-tile tile-placeholder">
+                            <span class="attr-label">{{ col2_label }}</span>
+                            <span class="attr-value">?</span>
+                        </div>
+                        <div class="attr-tile tile-placeholder">
+                            <span class="attr-label">{{ col3_label }}</span>
+                            <span class="attr-value">?</span>
+                        </div>
+                        <div class="attr-tile tile-placeholder">
+                            <span class="attr-label">{{ col4_label }}</span>
+                            <span class="attr-value">?</span>
+                        </div>
+                        <div class="attr-tile tile-placeholder">
+                            <span class="attr-label">{{ col5_label }}</span>
+                            <span class="attr-value">?</span>
+                        </div>
+                        <div class="attr-tile tile-placeholder">
+                            <span class="attr-label">{{ col6_label }}</span>
+                            <span class="attr-value">?</span>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================
+     📖 HOW TO PLAY INSTRUCTION POPUP MODAL
+     ========================================================= -->
+<div class="modal fade" id="howToPlayModal" tabindex="-1" aria-labelledby="howToPlayModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content movie-modal-content">
+            <div class="modal-header border-bottom border-secondary-subtle">
+                <h4 class="modal-title fw-extrabold" id="howToPlayModalLabel">
+                    {{ cat_title }} — How to Play
+                </h4>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-4">
+                <p class="text-secondary mb-4">
+                    Guess the secret {{ item_noun|lower }} in <strong>5 tries</strong> using visual clues, progressive single clues, and color-coded feedback!
+                </p>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <div class="howto-step-box">
+                            <div class="fs-4 fw-bold mb-1">💡 Shifting Clues</div>
+                            <p class="small text-secondary mb-0">
+                                Starts with <strong>CLUE 1</strong> above the search box. After each wrong guess, it shifts to <strong>CLUE 2</strong>, <strong>CLUE 3</strong>, and so on!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="howto-step-box">
+                            {% if is_object %}
+                                <div class="fs-4 fw-bold mb-1">⬛ Silhouette First</div>
+                                <p class="small text-secondary mb-0">
+                                    Try 1 shows <strong>only the Black Silhouette</strong>. Clues unlock from Try 2, and full color reveals after 4 tries!
+                                </p>
+                            {% else %}
+                                <div class="fs-4 fw-bold mb-1">🖼️ 4-Try Unblur</div>
+                                <p class="small text-secondary mb-0">
+                                    The image starts blurred and automatically <strong>unblurs after 4 tries</strong> for your final 5th guess!
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="howto-step-box">
+                            <div class="fs-4 fw-bold mb-1">⚙️ Settings</div>
+                            <p class="small text-secondary mb-0">
+                                Use <strong>⚙️ Settings</strong> in the top right anytime to mute sound effects or hide this popup on game start.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h6 class="fw-bold text-uppercase text-warning mb-3">🎨 Tile Colors</h6>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-4">
+                        <div class="attr-tile tile-green w-100">
+                            <span class="attr-label">GREEN</span>
+                            <span class="attr-value">✓ Exact Match</span>
+                            <span class="attr-subbadge">{{ col2_label }}, {{ col3_label }}, {{ col6_label }}, or Year is right!</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="attr-tile tile-yellow w-100">
+                            <span class="attr-label">YELLOW</span>
+                            <span class="attr-value">~ Close</span>
+                            <span class="attr-subbadge">Year is close or partial {{ col5_label }} match</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="attr-tile tile-wrong w-100">
+                            <span class="attr-label">GRAY</span>
+                            <span class="attr-value">✕ No Match</span>
+                            <span class="attr-subbadge">Does not match the target</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer border-top border-secondary-subtle">
+                <button type="button" class="btn btn-primary px-5 py-2 fw-bold sfx-click" data-bs-dismiss="modal">
+                    🚀 Let's Play!
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Embed catalog JSON for instant client-side autocomplete -->
+<script id="movieCatalogData" type="application/json">
+    {{ movie_catalog | tojson }}
+</script>
+
+{% endblock %}

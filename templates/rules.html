@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}How to Play - Guess the Thing 🎯{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>📖 How to Play</h1>
+    <p>
+        Master the rules, decipher clues, and build massive streaks to dominate the leaderboard!
+    </p>
+</div>
+
+<div class="container pb-5">
+    <div class="game-card" style="max-width: 900px;">
+        
+        <!-- STEP BY STEP -->
+        <h4 class="fw-bold mb-4">🚀 Core Game Flow</h4>
+        <div class="row g-4 mb-5">
+            <div class="col-md-3">
+                <div class="feature-card text-center p-3">
+                    <span class="fs-1 d-block mb-2">1️⃣</span>
+                    <h6 class="fw-bold">Pick Setup</h6>
+                    <p class="text-secondary small mb-0">Select your favorite universe, challenge difficulty, and clue style.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card text-center p-3">
+                    <span class="fs-1 d-block mb-2">2️⃣</span>
+                    <h6 class="fw-bold">Analyze Clue</h6>
+                    <p class="text-secondary small mb-0">Read the description or progressive hints carefully to deduce the secret thing.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card text-center p-3">
+                    <span class="fs-1 d-block mb-2">3️⃣</span>
+                    <h6 class="fw-bold">Submit Guess</h6>
+                    <p class="text-secondary small mb-0">Type your answer. Aliases and common character names are recognized.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card text-center p-3">
+                    <span class="fs-1 d-block mb-2">4️⃣</span>
+                    <h6 class="fw-bold">Chain Streaks</h6>
+                    <p class="text-secondary small mb-0">Correct answers in a row ignite streak bonuses for huge score multipliers!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLUE STYLES -->
+        <h4 class="fw-bold mb-3">🧩 Clue Styles Explained</h4>
+        <p class="text-secondary mb-4">Each mode offers a distinct way to experience the guessing challenge:</p>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="fs-3">💡</span>
+                        <h5 class="fw-bold mb-0">Normal Clue</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        A crisp, engaging trivia description detailing key attributes, abilities, or plot points without giving away the name immediately.
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle">
+                        <em>"Christopher Nolan's sci-fi heist movie where thieves enter dreams within dreams..."</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="fs-3">🧩</span>
+                        <h5 class="fw-bold mb-0">Progressive</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        Starts with a subtle hint (Tier 1). You can reveal up to 2 extra tiers if you get stuck. Each tier reveals more obvious context!
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle">
+                        <em>Tier 1: Subtle clue &rarr; Tier 2: Key quote &rarr; Tier 3: Direct giveaway.</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="fs-3">🔐</span>
+                        <h5 class="fw-bold mb-0">Cryptic</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        For true puzzle masters. Poetic riddles, metaphorical wordplay, and obscure lore that require deep deductive thinking.
+                    </p>
+                    <div class="p-2 bg-dark-subtle rounded small border border-secondary-subtle">
+                        <em>"A brass spindle wobbles as architectural mirrors fold cities into slumbers..."</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCORING TABLE -->
+        <h4 class="fw-bold mb-3">⭐ Scoring & Multipliers</h4>
+        <div class="table-responsive mb-5">
+            <table class="custom-table w-100">
+                <thead>
+                    <tr>
+                        <th>Difficulty</th>
+                        <th>Base Points</th>
+                        <th>Streak Multiplier</th>
+                        <th>Hint Deduction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">🟢 Easy</td>
+                        <td>100 pts</td>
+                        <td>+20% per consecutive correct</td>
+                        <td>-20 pts</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">🟡 Medium</td>
+                        <td>200 pts</td>
+                        <td>+25% per consecutive correct</td>
+                        <td>-30 pts</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">🔴 Hard</td>
+                        <td>350 pts</td>
+                        <td>+30% per consecutive correct</td>
+                        <td>-40 pts</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">💀 Insane</td>
+                        <td>500 pts</td>
+                        <td>+40% per consecutive correct</td>
+                        <td>-50 pts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center pt-3 border-top border-secondary-subtle">
+            <a href="/" class="btn btn-primary px-5 py-3 fw-bold fs-5">
+                🎮 Start Your First Game
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

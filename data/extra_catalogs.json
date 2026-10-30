@@ -1,0 +1,4101 @@
+{
+  "movies": [
+    {
+      "name": "The Avengers",
+      "aliases": [
+        "avengers"
+      ],
+      "year": 2012,
+      "director": "Joss Whedon",
+      "actor": "Robert Downey Jr.",
+      "rated": "PG-13",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "studio": "Marvel Studios"
+    },
+    {
+      "name": "Avengers: Infinity War",
+      "aliases": [
+        "infinity war"
+      ],
+      "year": 2018,
+      "director": "Russo Brothers",
+      "actor": "Robert Downey Jr.",
+      "rated": "PG-13",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "studio": "Marvel Studios"
+    },
+    {
+      "name": "Iron Man",
+      "aliases": [
+        "iron man 2008"
+      ],
+      "year": 2008,
+      "director": "Jon Favreau",
+      "actor": "Robert Downey Jr.",
+      "rated": "PG-13",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "studio": "Marvel Studios"
+    },
+    {
+      "name": "Batman Begins",
+      "aliases": [
+        "batman begins 2005"
+      ],
+      "year": 2005,
+      "director": "Christopher Nolan",
+      "actor": "Christian Bale",
+      "rated": "PG-13",
+      "genres": [
+        "Action",
+        "Crime"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "The Dark Knight Rises",
+      "aliases": [
+        "dark knight rises"
+      ],
+      "year": 2012,
+      "director": "Christopher Nolan",
+      "actor": "Christian Bale",
+      "rated": "PG-13",
+      "genres": [
+        "Action",
+        "Crime"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Tenet",
+      "aliases": [
+        "tenet 2020"
+      ],
+      "year": 2020,
+      "director": "Christopher Nolan",
+      "actor": "John David Washington",
+      "rated": "PG-13",
+      "genres": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Memento",
+      "aliases": [
+        "memento 2000"
+      ],
+      "year": 2000,
+      "director": "Christopher Nolan",
+      "actor": "Guy Pearce",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "studio": "Newmarket Films"
+    },
+    {
+      "name": "The Prestige",
+      "aliases": [
+        "prestige"
+      ],
+      "year": 2006,
+      "director": "Christopher Nolan",
+      "actor": "Hugh Jackman",
+      "rated": "PG-13",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Shutter Island",
+      "aliases": [
+        "shutter island 2010"
+      ],
+      "year": 2010,
+      "director": "Martin Scorsese",
+      "actor": "Leonardo DiCaprio",
+      "rated": "R",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "studio": "Paramount Pictures"
+    },
+    {
+      "name": "Goodfellas",
+      "aliases": [
+        "goodfellas 1990"
+      ],
+      "year": 1990,
+      "director": "Martin Scorsese",
+      "actor": "Ray Liotta",
+      "rated": "R",
+      "genres": [
+        "Biography",
+        "Crime"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Taxi Driver",
+      "aliases": [
+        "taxi driver 1976"
+      ],
+      "year": 1976,
+      "director": "Martin Scorsese",
+      "actor": "Robert De Niro",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "studio": "Columbia Pictures"
+    },
+    {
+      "name": "Catch Me If You Can",
+      "aliases": [
+        "catch me if you can 2002"
+      ],
+      "year": 2002,
+      "director": "Steven Spielberg",
+      "actor": "Leonardo DiCaprio",
+      "rated": "PG-13",
+      "genres": [
+        "Biography",
+        "Crime"
+      ],
+      "studio": "DreamWorks"
+    },
+    {
+      "name": "Django Unchained",
+      "aliases": [
+        "django"
+      ],
+      "year": 2012,
+      "director": "Quentin Tarantino",
+      "actor": "Jamie Foxx",
+      "rated": "R",
+      "genres": [
+        "Drama",
+        "Action"
+      ],
+      "studio": "Columbia Pictures"
+    },
+    {
+      "name": "Inglourious Basterds",
+      "aliases": [
+        "inglorious basterds"
+      ],
+      "year": 2009,
+      "director": "Quentin Tarantino",
+      "actor": "Brad Pitt",
+      "rated": "R",
+      "genres": [
+        "Adventure",
+        "Drama"
+      ],
+      "studio": "Universal Pictures"
+    },
+    {
+      "name": "Kill Bill: Vol. 1",
+      "aliases": [
+        "kill bill"
+      ],
+      "year": 2003,
+      "director": "Quentin Tarantino",
+      "actor": "Uma Thurman",
+      "rated": "R",
+      "genres": [
+        "Action",
+        "Crime"
+      ],
+      "studio": "Miramax"
+    },
+    {
+      "name": "Reservoir Dogs",
+      "aliases": [
+        "reservoir dogs 1992"
+      ],
+      "year": 1992,
+      "director": "Quentin Tarantino",
+      "actor": "Harvey Keitel",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "studio": "Miramax"
+    },
+    {
+      "name": "Se7en",
+      "aliases": [
+        "seven",
+        "se7en 1995"
+      ],
+      "year": 1995,
+      "director": "David Fincher",
+      "actor": "Brad Pitt",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "studio": "New Line Cinema"
+    },
+    {
+      "name": "Gone Girl",
+      "aliases": [
+        "gone girl 2014"
+      ],
+      "year": 2014,
+      "director": "David Fincher",
+      "actor": "Ben Affleck",
+      "rated": "R",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "studio": "20th Century Fox"
+    },
+    {
+      "name": "The Social Network",
+      "aliases": [
+        "social network"
+      ],
+      "year": 2010,
+      "director": "David Fincher",
+      "actor": "Jesse Eisenberg",
+      "rated": "PG-13",
+      "genres": [
+        "Biography",
+        "Drama"
+      ],
+      "studio": "Columbia Pictures"
+    },
+    {
+      "name": "Zodiac",
+      "aliases": [
+        "zodiac 2007"
+      ],
+      "year": 2007,
+      "director": "David Fincher",
+      "actor": "Jake Gyllenhaal",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "studio": "Paramount Pictures"
+    },
+    {
+      "name": "Terminator 2: Judgment Day",
+      "aliases": [
+        "terminator 2",
+        "t2"
+      ],
+      "year": 1991,
+      "director": "James Cameron",
+      "actor": "Arnold Schwarzenegger",
+      "rated": "R",
+      "genres": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "studio": "TriStar Pictures"
+    },
+    {
+      "name": "Aliens",
+      "aliases": [
+        "aliens 1986"
+      ],
+      "year": 1986,
+      "director": "James Cameron",
+      "actor": "Sigourney Weaver",
+      "rated": "R",
+      "genres": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "studio": "20th Century Fox"
+    },
+    {
+      "name": "Alien",
+      "aliases": [
+        "alien 1979"
+      ],
+      "year": 1979,
+      "director": "Ridley Scott",
+      "actor": "Sigourney Weaver",
+      "rated": "R",
+      "genres": [
+        "Sci-Fi",
+        "Horror"
+      ],
+      "studio": "20th Century Fox"
+    },
+    {
+      "name": "Blade Runner",
+      "aliases": [
+        "blade runner 1982"
+      ],
+      "year": 1982,
+      "director": "Ridley Scott",
+      "actor": "Harrison Ford",
+      "rated": "R",
+      "genres": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Blade Runner 2049",
+      "aliases": [
+        "blade runner 2049"
+      ],
+      "year": 2017,
+      "director": "Denis Villeneuve",
+      "actor": "Ryan Gosling",
+      "rated": "R",
+      "genres": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Arrival",
+      "aliases": [
+        "arrival 2016"
+      ],
+      "year": 2016,
+      "director": "Denis Villeneuve",
+      "actor": "Amy Adams",
+      "rated": "PG-13",
+      "genres": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "studio": "Paramount Pictures"
+    },
+    {
+      "name": "Prisoners",
+      "aliases": [
+        "prisoners 2013"
+      ],
+      "year": 2013,
+      "director": "Denis Villeneuve",
+      "actor": "Hugh Jackman",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Dune: Part One",
+      "aliases": [
+        "dune 2021",
+        "dune part 1"
+      ],
+      "year": 2021,
+      "director": "Denis Villeneuve",
+      "actor": "Timoth\u00e9e Chalamet",
+      "rated": "PG-13",
+      "genres": [
+        "Sci-Fi",
+        "Adventure"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "John Wick",
+      "aliases": [
+        "john wick 2014"
+      ],
+      "year": 2014,
+      "director": "Chad Stahelski",
+      "actor": "Keanu Reeves",
+      "rated": "R",
+      "genres": [
+        "Action",
+        "Crime"
+      ],
+      "studio": "Lionsgate"
+    },
+    {
+      "name": "Saving Private Ryan",
+      "aliases": [
+        "saving private ryan 1998"
+      ],
+      "year": 1998,
+      "director": "Steven Spielberg",
+      "actor": "Tom Hanks",
+      "rated": "R",
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "studio": "Paramount Pictures"
+    },
+    {
+      "name": "Raiders of the Lost Ark",
+      "aliases": [
+        "indiana jones"
+      ],
+      "year": 1981,
+      "director": "Steven Spielberg",
+      "actor": "Harrison Ford",
+      "rated": "PG",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "studio": "Paramount Pictures"
+    },
+    {
+      "name": "E.T. the Extra-Terrestrial",
+      "aliases": [
+        "et"
+      ],
+      "year": 1982,
+      "director": "Steven Spielberg",
+      "actor": "Henry Thomas",
+      "rated": "PG",
+      "genres": [
+        "Sci-Fi",
+        "Family"
+      ],
+      "studio": "Universal Pictures"
+    },
+    {
+      "name": "Finding Nemo",
+      "aliases": [
+        "finding nemo 2003"
+      ],
+      "year": 2003,
+      "director": "Andrew Stanton",
+      "actor": "Albert Brooks",
+      "rated": "G",
+      "genres": [
+        "Animation",
+        "Family"
+      ],
+      "studio": "Walt Disney Pictures"
+    },
+    {
+      "name": "WALL-E",
+      "aliases": [
+        "walle"
+      ],
+      "year": 2008,
+      "director": "Andrew Stanton",
+      "actor": "Ben Burtt",
+      "rated": "G",
+      "genres": [
+        "Animation",
+        "Sci-Fi"
+      ],
+      "studio": "Walt Disney Pictures"
+    },
+    {
+      "name": "Up",
+      "aliases": [
+        "up 2009"
+      ],
+      "year": 2009,
+      "director": "Pete Docter",
+      "actor": "Ed Asner",
+      "rated": "PG",
+      "genres": [
+        "Animation",
+        "Adventure"
+      ],
+      "studio": "Walt Disney Pictures"
+    },
+    {
+      "name": "Ratatouille",
+      "aliases": [
+        "ratatouille 2007"
+      ],
+      "year": 2007,
+      "director": "Brad Bird",
+      "actor": "Patton Oswalt",
+      "rated": "G",
+      "genres": [
+        "Animation",
+        "Comedy"
+      ],
+      "studio": "Walt Disney Pictures"
+    },
+    {
+      "name": "The Incredibles",
+      "aliases": [
+        "incredibles"
+      ],
+      "year": 2004,
+      "director": "Brad Bird",
+      "actor": "Craig T. Nelson",
+      "rated": "PG",
+      "genres": [
+        "Animation",
+        "Action"
+      ],
+      "studio": "Walt Disney Pictures"
+    },
+    {
+      "name": "Coco",
+      "aliases": [
+        "coco 2017"
+      ],
+      "year": 2017,
+      "director": "Lee Unkrich",
+      "actor": "Anthony Gonzalez",
+      "rated": "PG",
+      "genres": [
+        "Animation",
+        "Family"
+      ],
+      "studio": "Walt Disney Pictures"
+    },
+    {
+      "name": "Joker",
+      "aliases": [
+        "joker 2019"
+      ],
+      "year": 2019,
+      "director": "Todd Phillips",
+      "actor": "Joaquin Phoenix",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Barbie",
+      "aliases": [
+        "barbie 2023"
+      ],
+      "year": 2023,
+      "director": "Greta Gerwig",
+      "actor": "Margot Robbie",
+      "rated": "PG-13",
+      "genres": [
+        "Adventure",
+        "Comedy"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Little Women",
+      "aliases": [
+        "little women 2019"
+      ],
+      "year": 2019,
+      "director": "Greta Gerwig",
+      "actor": "Saoirse Ronan",
+      "rated": "PG",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "studio": "Columbia Pictures"
+    },
+    {
+      "name": "Lady Bird",
+      "aliases": [
+        "lady bird 2017"
+      ],
+      "year": 2017,
+      "director": "Greta Gerwig",
+      "actor": "Saoirse Ronan",
+      "rated": "R",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "studio": "A24"
+    },
+    {
+      "name": "Top Gun: Maverick",
+      "aliases": [
+        "top gun maverick",
+        "top gun"
+      ],
+      "year": 2022,
+      "director": "Joseph Kosinski",
+      "actor": "Tom Cruise",
+      "rated": "PG-13",
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "studio": "Paramount Pictures"
+    },
+    {
+      "name": "La La Land",
+      "aliases": [
+        "la la land 2016"
+      ],
+      "year": 2016,
+      "director": "Damien Chazelle",
+      "actor": "Ryan Gosling",
+      "rated": "PG-13",
+      "genres": [
+        "Romance",
+        "Music"
+      ],
+      "studio": "Lionsgate"
+    },
+    {
+      "name": "Eternal Sunshine of the Spotless Mind",
+      "aliases": [
+        "eternal sunshine"
+      ],
+      "year": 2004,
+      "director": "Michel Gondry",
+      "actor": "Jim Carrey",
+      "rated": "R",
+      "genres": [
+        "Romance",
+        "Sci-Fi"
+      ],
+      "studio": "Focus Features"
+    },
+    {
+      "name": "Her",
+      "aliases": [
+        "her 2013"
+      ],
+      "year": 2013,
+      "director": "Spike Jonze",
+      "actor": "Joaquin Phoenix",
+      "rated": "R",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "The Silence of the Lambs",
+      "aliases": [
+        "silence of the lambs"
+      ],
+      "year": 1991,
+      "director": "Jonathan Demme",
+      "actor": "Jodie Foster",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "studio": "Orion Pictures"
+    },
+    {
+      "name": "The Shining",
+      "aliases": [
+        "shining"
+      ],
+      "year": 1980,
+      "director": "Stanley Kubrick",
+      "actor": "Jack Nicholson",
+      "rated": "R",
+      "genres": [
+        "Horror",
+        "Thriller"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "2001: A Space Odyssey",
+      "aliases": [
+        "2001 space odyssey"
+      ],
+      "year": 1968,
+      "director": "Stanley Kubrick",
+      "actor": "Keir Dullea",
+      "rated": "G",
+      "genres": [
+        "Sci-Fi",
+        "Adventure"
+      ],
+      "studio": "MGM"
+    },
+    {
+      "name": "A Clockwork Orange",
+      "aliases": [
+        "clockwork orange"
+      ],
+      "year": 1971,
+      "director": "Stanley Kubrick",
+      "actor": "Malcolm McDowell",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Sci-Fi"
+      ],
+      "studio": "Warner Bros."
+    },
+    {
+      "name": "Pan's Labyrinth",
+      "aliases": [
+        "pans labyrinth"
+      ],
+      "year": 2006,
+      "director": "Guillermo del Toro",
+      "actor": "Ivana Baquero",
+      "rated": "R",
+      "genres": [
+        "Fantasy",
+        "Drama"
+      ],
+      "studio": "Picturehouse"
+    },
+    {
+      "name": "Oldboy",
+      "aliases": [
+        "oldboy 2003"
+      ],
+      "year": 2003,
+      "director": "Park Chan-wook",
+      "actor": "Choi Min-sik",
+      "rated": "R",
+      "genres": [
+        "Action",
+        "Thriller"
+      ],
+      "studio": "Show East"
+    },
+    {
+      "name": "Train to Busan",
+      "aliases": [
+        "train to busan 2016"
+      ],
+      "year": 2016,
+      "director": "Yeon Sang-ho",
+      "actor": "Gong Yoo",
+      "rated": "PG-13",
+      "genres": [
+        "Horror",
+        "Action"
+      ],
+      "studio": "Next Entertainment"
+    },
+    {
+      "name": "Am\u00e9lie",
+      "aliases": [
+        "amelie"
+      ],
+      "year": 2001,
+      "director": "Jean-Pierre Jeunet",
+      "actor": "Audrey Tautou",
+      "rated": "R",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "studio": "Miramax"
+    },
+    {
+      "name": "The Thing",
+      "aliases": [
+        "the thing 1982"
+      ],
+      "year": 1982,
+      "director": "John Carpenter",
+      "actor": "Kurt Russell",
+      "rated": "R",
+      "genres": [
+        "Horror",
+        "Sci-Fi"
+      ],
+      "studio": "Universal Pictures"
+    },
+    {
+      "name": "Shaun of the Dead",
+      "aliases": [
+        "shaun of the dead 2004"
+      ],
+      "year": 2004,
+      "director": "Edgar Wright",
+      "actor": "Simon Pegg",
+      "rated": "R",
+      "genres": [
+        "Comedy",
+        "Horror"
+      ],
+      "studio": "Universal Pictures"
+    },
+    {
+      "name": "Hot Fuzz",
+      "aliases": [
+        "hot fuzz 2007"
+      ],
+      "year": 2007,
+      "director": "Edgar Wright",
+      "actor": "Simon Pegg",
+      "rated": "R",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "studio": "Universal Pictures"
+    },
+    {
+      "name": "Baby Driver",
+      "aliases": [
+        "baby driver 2017"
+      ],
+      "year": 2017,
+      "director": "Edgar Wright",
+      "actor": "Ansel Elgort",
+      "rated": "R",
+      "genres": [
+        "Action",
+        "Crime"
+      ],
+      "studio": "TriStar Pictures"
+    },
+    {
+      "name": "Scott Pilgrim vs. the World",
+      "aliases": [
+        "scott pilgrim"
+      ],
+      "year": 2010,
+      "director": "Edgar Wright",
+      "actor": "Michael Cera",
+      "rated": "PG-13",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "studio": "Universal Pictures"
+    },
+    {
+      "name": "The Big Lebowski",
+      "aliases": [
+        "big lebowski"
+      ],
+      "year": 1998,
+      "director": "Coen Brothers",
+      "actor": "Jeff Bridges",
+      "rated": "R",
+      "genres": [
+        "Comedy",
+        "Crime"
+      ],
+      "studio": "Gramercy Pictures"
+    },
+    {
+      "name": "Fargo",
+      "aliases": [
+        "fargo 1996"
+      ],
+      "year": 1996,
+      "director": "Coen Brothers",
+      "actor": "Frances McDormand",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "studio": "Gramercy Pictures"
+    },
+    {
+      "name": "Moonlight",
+      "aliases": [
+        "moonlight 2016"
+      ],
+      "year": 2016,
+      "director": "Barry Jenkins",
+      "actor": "Mahershala Ali",
+      "rated": "R",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "studio": "A24"
+    },
+    {
+      "name": "Hereditary",
+      "aliases": [
+        "hereditary 2018"
+      ],
+      "year": 2018,
+      "director": "Ari Aster",
+      "actor": "Toni Collette",
+      "rated": "R",
+      "genres": [
+        "Horror",
+        "Drama"
+      ],
+      "studio": "A24"
+    },
+    {
+      "name": "Midsommar",
+      "aliases": [
+        "midsommar 2019"
+      ],
+      "year": 2019,
+      "director": "Ari Aster",
+      "actor": "Florence Pugh",
+      "rated": "R",
+      "genres": [
+        "Horror",
+        "Drama"
+      ],
+      "studio": "A24"
+    },
+    {
+      "name": "The Lighthouse",
+      "aliases": [
+        "lighthouse 2019"
+      ],
+      "year": 2019,
+      "director": "Robert Eggers",
+      "actor": "Willem Dafoe",
+      "rated": "R",
+      "genres": [
+        "Horror",
+        "Drama"
+      ],
+      "studio": "A24"
+    },
+    {
+      "name": "Uncut Gems",
+      "aliases": [
+        "uncut gems 2019"
+      ],
+      "year": 2019,
+      "director": "Safdie Brothers",
+      "actor": "Adam Sandler",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "studio": "A24"
+    },
+    {
+      "name": "A Quiet Place",
+      "aliases": [
+        "quiet place"
+      ],
+      "year": 2018,
+      "director": "John Krasinski",
+      "actor": "Emily Blunt",
+      "rated": "PG-13",
+      "genres": [
+        "Horror",
+        "Sci-Fi"
+      ],
+      "studio": "Paramount Pictures"
+    },
+    {
+      "name": "Donnie Darko",
+      "aliases": [
+        "donnie darko 2001"
+      ],
+      "year": 2001,
+      "director": "Richard Kelly",
+      "actor": "Jake Gyllenhaal",
+      "rated": "R",
+      "genres": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "studio": "Newmarket Films"
+    },
+    {
+      "name": "Nightcrawler",
+      "aliases": [
+        "nightcrawler 2014"
+      ],
+      "year": 2014,
+      "director": "Dan Gilroy",
+      "actor": "Jake Gyllenhaal",
+      "rated": "R",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "studio": "Open Road Films"
+    }
+  ],
+  "anime": [
+    {
+      "name": "Tokyo Ghoul",
+      "aliases": [
+        "ken kaneki",
+        "kaneki"
+      ],
+      "year": 2014,
+      "director": "Sui Ishida",
+      "actor": "Ken Kaneki",
+      "rated": "TV-MA",
+      "genres": [
+        "Dark Fantasy",
+        "Thriller"
+      ],
+      "studio": "Studio Pierrot"
+    },
+    {
+      "name": "Sword Art Online",
+      "aliases": [
+        "sao",
+        "kirito"
+      ],
+      "year": 2012,
+      "director": "Reki Kawahara",
+      "actor": "Kirito",
+      "rated": "TV-14",
+      "genres": [
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "studio": "A-1 Pictures"
+    },
+    {
+      "name": "Black Clover",
+      "aliases": [
+        "asta"
+      ],
+      "year": 2017,
+      "director": "Yuki Tabata",
+      "actor": "Asta",
+      "rated": "TV-14",
+      "genres": [
+        "Adventure",
+        "Shonen"
+      ],
+      "studio": "Studio Pierrot"
+    },
+    {
+      "name": "Cyberpunk: Edgerunners",
+      "aliases": [
+        "edgerunners",
+        "david martinez"
+      ],
+      "year": 2022,
+      "director": "Hiroyuki Imaishi",
+      "actor": "David Martinez",
+      "rated": "TV-MA",
+      "genres": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "studio": "Trigger"
+    },
+    {
+      "name": "Solo Leveling",
+      "aliases": [
+        "sung jinwoo"
+      ],
+      "year": 2024,
+      "director": "Chugong",
+      "actor": "Sung Jinwoo",
+      "rated": "TV-MA",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "studio": "A-1 Pictures"
+    },
+    {
+      "name": "JoJo's Bizarre Adventure",
+      "aliases": [
+        "jojo",
+        "jotaro kujo"
+      ],
+      "year": 2012,
+      "director": "Hirohiko Araki",
+      "actor": "Jotaro Kujo",
+      "rated": "TV-MA",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "studio": "David Production"
+    },
+    {
+      "name": "Blue Lock",
+      "aliases": [
+        "yoichi isagi"
+      ],
+      "year": 2022,
+      "director": "Muneyuki Kaneshiro",
+      "actor": "Yoichi Isagi",
+      "rated": "TV-14",
+      "genres": [
+        "Sports",
+        "Shonen"
+      ],
+      "studio": "Eight Bit"
+    },
+    {
+      "name": "Your Name",
+      "aliases": [
+        "kimi no na wa"
+      ],
+      "year": 2016,
+      "director": "Makoto Shinkai",
+      "actor": "Taki Tachibana",
+      "rated": "PG",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "studio": "CoMix Wave Films"
+    },
+    {
+      "name": "Weathering With You",
+      "aliases": [
+        "tenki no ko"
+      ],
+      "year": 2019,
+      "director": "Makoto Shinkai",
+      "actor": "Hodaka Morishima",
+      "rated": "PG-13",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "studio": "CoMix Wave Films"
+    },
+    {
+      "name": "Suzume",
+      "aliases": [
+        "suzume no\u6238\u7de0\u307e\u308a"
+      ],
+      "year": 2022,
+      "director": "Makoto Shinkai",
+      "actor": "Suzume Iwato",
+      "rated": "PG",
+      "genres": [
+        "Fantasy",
+        "Adventure"
+      ],
+      "studio": "CoMix Wave Films"
+    },
+    {
+      "name": "Princess Mononoke",
+      "aliases": [
+        "mononoke hime"
+      ],
+      "year": 1997,
+      "director": "Hayao Miyazaki",
+      "actor": "Ashitaka",
+      "rated": "PG-13",
+      "genres": [
+        "Fantasy",
+        "Adventure"
+      ],
+      "studio": "Studio Ghibli"
+    },
+    {
+      "name": "Howl's Moving Castle",
+      "aliases": [
+        "howls moving castle"
+      ],
+      "year": 2004,
+      "director": "Hayao Miyazaki",
+      "actor": "Sophie Hatter",
+      "rated": "PG",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "studio": "Studio Ghibli"
+    },
+    {
+      "name": "My Neighbor Totoro",
+      "aliases": [
+        "totoro"
+      ],
+      "year": 1988,
+      "director": "Hayao Miyazaki",
+      "actor": "Satsuki & Mei",
+      "rated": "G",
+      "genres": [
+        "Fantasy",
+        "Family"
+      ],
+      "studio": "Studio Ghibli"
+    },
+    {
+      "name": "Akira",
+      "aliases": [
+        "akira 1988",
+        "kaneda"
+      ],
+      "year": 1988,
+      "director": "Katsuhiro Otomo",
+      "actor": "Shotaro Kaneda",
+      "rated": "R",
+      "genres": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "studio": "Tokyo Movie Shinsha"
+    },
+    {
+      "name": "Ghost in the Shell",
+      "aliases": [
+        "motoko kusanagi"
+      ],
+      "year": 1995,
+      "director": "Mamoru Oshii",
+      "actor": "Motoko Kusanagi",
+      "rated": "R",
+      "genres": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "studio": "Production I.G"
+    },
+    {
+      "name": "Berserk",
+      "aliases": [
+        "guts",
+        "griffith"
+      ],
+      "year": 1997,
+      "director": "Kentaro Miura",
+      "actor": "Guts",
+      "rated": "TV-MA",
+      "genres": [
+        "Dark Fantasy",
+        "Action"
+      ],
+      "studio": "OLM"
+    },
+    {
+      "name": "Samurai Champloo",
+      "aliases": [
+        "mugen",
+        "jin"
+      ],
+      "year": 2004,
+      "director": "Shinichiro Watanabe",
+      "actor": "Mugen",
+      "rated": "TV-MA",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "studio": "Manglobe"
+    },
+    {
+      "name": "Trigun",
+      "aliases": [
+        "vash the stampede"
+      ],
+      "year": 1998,
+      "director": "Yasuhiro Nightow",
+      "actor": "Vash the Stampede",
+      "rated": "TV-14",
+      "genres": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "studio": "Madhouse"
+    },
+    {
+      "name": "YuYu Hakusho",
+      "aliases": [
+        "yusuke urameshi"
+      ],
+      "year": 1992,
+      "director": "Yoshihiro Togashi",
+      "actor": "Yusuke Urameshi",
+      "rated": "TV-14",
+      "genres": [
+        "Action",
+        "Supernatural"
+      ],
+      "studio": "Studio Pierrot"
+    },
+    {
+      "name": "Inuyasha",
+      "aliases": [
+        "kagome"
+      ],
+      "year": 2000,
+      "director": "Rumiko Takahashi",
+      "actor": "Inuyasha",
+      "rated": "TV-14",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "studio": "Sunrise"
+    },
+    {
+      "name": "Sailor Moon",
+      "aliases": [
+        "usagi tsukino"
+      ],
+      "year": 1992,
+      "director": "Naoko Takeuchi",
+      "actor": "Usagi Tsukino",
+      "rated": "TV-PG",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "studio": "Toei Animation"
+    },
+    {
+      "name": "Gurren Lagann",
+      "aliases": [
+        "tengen toppa gurren lagann",
+        "simon",
+        "kamina"
+      ],
+      "year": 2007,
+      "director": "Hiroyuki Imaishi",
+      "actor": "Simon",
+      "rated": "TV-14",
+      "genres": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "studio": "Gainax"
+    },
+    {
+      "name": "Kill la Kill",
+      "aliases": [
+        "ryuko matoi"
+      ],
+      "year": 2013,
+      "director": "Hiroyuki Imaishi",
+      "actor": "Ryuko Matoi",
+      "rated": "TV-MA",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "studio": "Trigger"
+    },
+    {
+      "name": "Violet Evergarden",
+      "aliases": [
+        "violet"
+      ],
+      "year": 2018,
+      "director": "Kana Akatsuki",
+      "actor": "Violet Evergarden",
+      "rated": "TV-14",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
+      "studio": "Kyoto Animation"
+    },
+    {
+      "name": "A Silent Voice",
+      "aliases": [
+        "koe no katachi"
+      ],
+      "year": 2016,
+      "director": "Naoko Yamada",
+      "actor": "Shoya Ishida",
+      "rated": "PG-13",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "studio": "Kyoto Animation"
+    },
+    {
+      "name": "Clannad: After Story",
+      "aliases": [
+        "clannad"
+      ],
+      "year": 2008,
+      "director": "Tatsuya Ishihara",
+      "actor": "Tomoya Okazaki",
+      "rated": "TV-14",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "studio": "Kyoto Animation"
+    },
+    {
+      "name": "Bocchi the Rock!",
+      "aliases": [
+        "bocchi",
+        "hitori gotoh"
+      ],
+      "year": 2022,
+      "director": "Aki Hamaji",
+      "actor": "Hitori Gotoh",
+      "rated": "TV-14",
+      "genres": [
+        "Comedy",
+        "Music"
+      ],
+      "studio": "CloverWorks"
+    },
+    {
+      "name": "Kaguya-sama: Love Is War",
+      "aliases": [
+        "kaguya sama",
+        "love is war"
+      ],
+      "year": 2019,
+      "director": "Aka Akasaka",
+      "actor": "Kaguya Shinomiya",
+      "rated": "TV-14",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "studio": "A-1 Pictures"
+    },
+    {
+      "name": "Horimiya",
+      "aliases": [
+        "hori and miyamura"
+      ],
+      "year": 2021,
+      "director": "HERO",
+      "actor": "Kyoko Hori",
+      "rated": "TV-14",
+      "genres": [
+        "Romance",
+        "Comedy"
+      ],
+      "studio": "CloverWorks"
+    },
+    {
+      "name": "Toradora!",
+      "aliases": [
+        "toradora",
+        "taiga aisaka"
+      ],
+      "year": 2008,
+      "director": "Yuyuko Takemiya",
+      "actor": "Taiga Aisaka",
+      "rated": "TV-14",
+      "genres": [
+        "Romance",
+        "Comedy"
+      ],
+      "studio": "J.C.Staff"
+    },
+    {
+      "name": "Your Lie in April",
+      "aliases": [
+        "shigatsu wa kimi no uso",
+        "kaori miyazono"
+      ],
+      "year": 2014,
+      "director": "Naoshi Arakawa",
+      "actor": "Kosei Arima",
+      "rated": "TV-14",
+      "genres": [
+        "Drama",
+        "Music"
+      ],
+      "studio": "A-1 Pictures"
+    },
+    {
+      "name": "Re:Zero",
+      "aliases": [
+        "rezero",
+        "subaru natsuki",
+        "emilia"
+      ],
+      "year": 2016,
+      "director": "Tappei Nagatsuki",
+      "actor": "Subaru Natsuki",
+      "rated": "TV-MA",
+      "genres": [
+        "Fantasy",
+        "Thriller"
+      ],
+      "studio": "White Fox"
+    },
+    {
+      "name": "KonoSuba",
+      "aliases": [
+        "kazuma",
+        "megumin",
+        "aqua"
+      ],
+      "year": 2016,
+      "director": "Natsume Akatsuki",
+      "actor": "Kazuma Sato",
+      "rated": "TV-14",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "studio": "Studio Deen"
+    },
+    {
+      "name": "Mushoku Tensei",
+      "aliases": [
+        "jobless reincarnation",
+        "rudeus"
+      ],
+      "year": 2021,
+      "director": "Rifujin na Magonote",
+      "actor": "Rudeus Greyrat",
+      "rated": "TV-MA",
+      "genres": [
+        "Fantasy",
+        "Adventure"
+      ],
+      "studio": "Studio Bind"
+    },
+    {
+      "name": "Overlord",
+      "aliases": [
+        "ainz ooal gown"
+      ],
+      "year": 2015,
+      "director": "Kugane Maruyama",
+      "actor": "Ainz Ooal Gown",
+      "rated": "TV-MA",
+      "genres": [
+        "Fantasy",
+        "Action"
+      ],
+      "studio": "Madhouse"
+    },
+    {
+      "name": "Made in Abyss",
+      "aliases": [
+        "riko",
+        "reg"
+      ],
+      "year": 2017,
+      "director": "Akihito Tsukushi",
+      "actor": "Riko",
+      "rated": "TV-MA",
+      "genres": [
+        "Adventure",
+        "Dark Fantasy"
+      ],
+      "studio": "Kinema Citrus"
+    },
+    {
+      "name": "The Promised Neverland",
+      "aliases": [
+        "emma",
+        "norman",
+        "ray"
+      ],
+      "year": 2019,
+      "director": "Kaiu Shirai",
+      "actor": "Emma",
+      "rated": "TV-14",
+      "genres": [
+        "Thriller",
+        "Dark Fantasy"
+      ],
+      "studio": "CloverWorks"
+    },
+    {
+      "name": "Erased",
+      "aliases": [
+        "boku dake ga inai machi"
+      ],
+      "year": 2016,
+      "director": "Kei Sanbe",
+      "actor": "Satoru Fujinuma",
+      "rated": "TV-14",
+      "genres": [
+        "Thriller",
+        "Supernatural"
+      ],
+      "studio": "A-1 Pictures"
+    },
+    {
+      "name": "Parasyte: The Maxim",
+      "aliases": [
+        "parasyte",
+        "shinichi izumi",
+        "migi"
+      ],
+      "year": 2014,
+      "director": "Hitoshi Iwaaki",
+      "actor": "Shinichi Izumi",
+      "rated": "TV-MA",
+      "genres": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "studio": "Madhouse"
+    },
+    {
+      "name": "Psycho-Pass",
+      "aliases": [
+        "akane tsunemori",
+        "shinya kogami"
+      ],
+      "year": 2012,
+      "director": "Gen Urobuchi",
+      "actor": "Akane Tsunemori",
+      "rated": "TV-MA",
+      "genres": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "studio": "Production I.G"
+    },
+    {
+      "name": "Serial Experiments Lain",
+      "aliases": [
+        "lain iwakura"
+      ],
+      "year": 1998,
+      "director": "Ryutaro Nakamura",
+      "actor": "Lain Iwakura",
+      "rated": "TV-MA",
+      "genres": [
+        "Sci-Fi",
+        "Psychological"
+      ],
+      "studio": "Triangle Staff"
+    },
+    {
+      "name": "Odd Taxi",
+      "aliases": [
+        "odokawa"
+      ],
+      "year": 2021,
+      "director": "Kazuya Konomoto",
+      "actor": "Hiroshi Odokawa",
+      "rated": "TV-14",
+      "genres": [
+        "Thriller",
+        "Drama"
+      ],
+      "studio": "OLM"
+    },
+    {
+      "name": "Mushishi",
+      "aliases": [
+        "ginko"
+      ],
+      "year": 2005,
+      "director": "Yuki Urushibara",
+      "actor": "Ginko",
+      "rated": "TV-14",
+      "genres": [
+        "Supernatural",
+        "Fantasy"
+      ],
+      "studio": "Artland"
+    },
+    {
+      "name": "Delicious in Dungeon",
+      "aliases": [
+        "dungeon meshi",
+        "laios"
+      ],
+      "year": 2024,
+      "director": "Ryoko Kui",
+      "actor": "Laios Touden",
+      "rated": "TV-14",
+      "genres": [
+        "Fantasy",
+        "Comedy"
+      ],
+      "studio": "Trigger"
+    },
+    {
+      "name": "The Apothecary Diaries",
+      "aliases": [
+        "kusuriya no hitorigoto",
+        "maomao"
+      ],
+      "year": 2023,
+      "director": "Natsu Hyuga",
+      "actor": "Maomao",
+      "rated": "TV-14",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "studio": "OLM"
+    },
+    {
+      "name": "Dr. Stone",
+      "aliases": [
+        "senku ishigami"
+      ],
+      "year": 2019,
+      "director": "Riichiro Inagaki",
+      "actor": "Senku Ishigami",
+      "rated": "TV-14",
+      "genres": [
+        "Sci-Fi",
+        "Adventure"
+      ],
+      "studio": "TMS Entertainment"
+    },
+    {
+      "name": "Assassination Classroom",
+      "aliases": [
+        "koro sensei"
+      ],
+      "year": 2015,
+      "director": "Yusei Matsui",
+      "actor": "Koro-sensei",
+      "rated": "TV-14",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "studio": "Lerche"
+    },
+    {
+      "name": "Fairy Tail",
+      "aliases": [
+        "natsu dragneel"
+      ],
+      "year": 2009,
+      "director": "Hiro Mashima",
+      "actor": "Natsu Dragneel",
+      "rated": "TV-14",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "studio": "A-1 Pictures"
+    },
+    {
+      "name": "Gintama",
+      "aliases": [
+        "gintoki sakata"
+      ],
+      "year": 2006,
+      "director": "Hideaki Sorachi",
+      "actor": "Gintoki Sakata",
+      "rated": "TV-14",
+      "genres": [
+        "Comedy",
+        "Action"
+      ],
+      "studio": "Sunrise"
+    },
+    {
+      "name": "Hajime no Ippo",
+      "aliases": [
+        "ippo makunouchi"
+      ],
+      "year": 2000,
+      "director": "George Morikawa",
+      "actor": "Ippo Makunouchi",
+      "rated": "TV-14",
+      "genres": [
+        "Sports",
+        "Shonen"
+      ],
+      "studio": "Madhouse"
+    },
+    {
+      "name": "Slam Dunk",
+      "aliases": [
+        "hanamichi sakuragi"
+      ],
+      "year": 1993,
+      "director": "Takehiko Inoue",
+      "actor": "Hanamichi Sakuragi",
+      "rated": "TV-PG",
+      "genres": [
+        "Sports",
+        "Shonen"
+      ],
+      "studio": "Toei Animation"
+    },
+    {
+      "name": "Pluto",
+      "aliases": [
+        "gesicht",
+        "astro boy pluto"
+      ],
+      "year": 2023,
+      "director": "Naoki Urasawa",
+      "actor": "Gesicht",
+      "rated": "TV-14",
+      "genres": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "studio": "Studio M2"
+    }
+  ],
+  "common_objects": [
+    {
+      "name": "Microwave",
+      "aliases": [
+        "microwave oven"
+      ],
+      "year": 1945,
+      "director": "Kitchen",
+      "actor": "Metal & Glass",
+      "rated": "Electric",
+      "genres": [
+        "Cooking",
+        "Appliance"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Toaster",
+      "aliases": [
+        "bread toaster"
+      ],
+      "year": 1909,
+      "director": "Kitchen",
+      "actor": "Stainless Steel",
+      "rated": "Electric",
+      "genres": [
+        "Cooking",
+        "Appliance"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Stapler",
+      "aliases": [
+        "office stapler"
+      ],
+      "year": 1866,
+      "director": "Office & Desk",
+      "actor": "Metal & Plastic",
+      "rated": "Manual",
+      "genres": [
+        "Stationery",
+        "Office"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Computer Keyboard",
+      "aliases": [
+        "keyboard"
+      ],
+      "year": 1968,
+      "director": "Office & Desk",
+      "actor": "Plastic & Metal",
+      "rated": "Electric",
+      "genres": [
+        "Computing",
+        "Office"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Computer Mouse",
+      "aliases": [
+        "mouse"
+      ],
+      "year": 1964,
+      "director": "Office & Desk",
+      "actor": "Plastic & Silicon",
+      "rated": "Battery",
+      "genres": [
+        "Computing",
+        "Office"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Compass",
+      "aliases": [
+        "magnetic compass"
+      ],
+      "year": 1100,
+      "director": "Everyday Carry",
+      "actor": "Brass & Glass",
+      "rated": "Manual",
+      "genres": [
+        "Navigation",
+        "Outdoor"
+      ],
+      "studio": "Pocket-Sized"
+    },
+    {
+      "name": "Telescope",
+      "aliases": [
+        "spyglass"
+      ],
+      "year": 1608,
+      "director": "Outdoor",
+      "actor": "Glass & Metal",
+      "rated": "Manual",
+      "genres": [
+        "Optics",
+        "Science"
+      ],
+      "studio": "Large"
+    },
+    {
+      "name": "Binoculars",
+      "aliases": [
+        "field glasses"
+      ],
+      "year": 1825,
+      "director": "Outdoor",
+      "actor": "Glass & Rubber",
+      "rated": "Manual",
+      "genres": [
+        "Optics",
+        "Outdoor"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Candle",
+      "aliases": [
+        "wax candle"
+      ],
+      "year": 1500,
+      "director": "Home & Ceiling",
+      "actor": "Wax & Wick",
+      "rated": "Manual",
+      "genres": [
+        "Lighting",
+        "Household"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Screwdriver",
+      "aliases": [
+        "phillips screwdriver"
+      ],
+      "year": 1800,
+      "director": "Workshop",
+      "actor": "Steel & Plastic",
+      "rated": "Manual",
+      "genres": [
+        "Tools",
+        "Hardware"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Wrench",
+      "aliases": [
+        "spanner",
+        "monkey wrench"
+      ],
+      "year": 1835,
+      "director": "Workshop",
+      "actor": "Forged Steel",
+      "rated": "Manual",
+      "genres": [
+        "Tools",
+        "Hardware"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Pliers",
+      "aliases": [
+        "needle nose pliers"
+      ],
+      "year": 1850,
+      "director": "Workshop",
+      "actor": "Steel & Rubber",
+      "rated": "Manual",
+      "genres": [
+        "Tools",
+        "Hardware"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Tape Measure",
+      "aliases": [
+        "measuring tape"
+      ],
+      "year": 1868,
+      "director": "Workshop",
+      "actor": "Steel & Plastic",
+      "rated": "Manual",
+      "genres": [
+        "Tools",
+        "Hardware"
+      ],
+      "studio": "Pocket-Sized"
+    },
+    {
+      "name": "Pencil",
+      "aliases": [
+        "wooden pencil"
+      ],
+      "year": 1564,
+      "director": "Office & Desk",
+      "actor": "Wood & Graphite",
+      "rated": "Manual",
+      "genres": [
+        "Stationery",
+        "Craft"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Fountain Pen",
+      "aliases": [
+        "pen",
+        "ballpoint pen"
+      ],
+      "year": 1884,
+      "director": "Office & Desk",
+      "actor": "Metal & Ink",
+      "rated": "Manual",
+      "genres": [
+        "Stationery",
+        "Office"
+      ],
+      "studio": "Pocket-Sized"
+    },
+    {
+      "name": "Paperclip",
+      "aliases": [
+        "paper clip"
+      ],
+      "year": 1899,
+      "director": "Office & Desk",
+      "actor": "Steel Wire",
+      "rated": "Manual",
+      "genres": [
+        "Stationery",
+        "Office"
+      ],
+      "studio": "Pocket-Sized"
+    },
+    {
+      "name": "Calculator",
+      "aliases": [
+        "pocket calculator"
+      ],
+      "year": 1967,
+      "director": "Office & Desk",
+      "actor": "Plastic & Silicon",
+      "rated": "Battery",
+      "genres": [
+        "Computing",
+        "Office"
+      ],
+      "studio": "Pocket-Sized"
+    },
+    {
+      "name": "Mirror",
+      "aliases": [
+        "hand mirror"
+      ],
+      "year": 1835,
+      "director": "Bathroom",
+      "actor": "Glass & Silver",
+      "rated": "Manual",
+      "genres": [
+        "Hygiene",
+        "Household"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Hairbrush",
+      "aliases": [
+        "comb",
+        "brush"
+      ],
+      "year": 1777,
+      "director": "Bathroom",
+      "actor": "Plastic & Bristles",
+      "rated": "Manual",
+      "genres": [
+        "Hygiene",
+        "Household"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Razor",
+      "aliases": [
+        "safety razor",
+        "shaver"
+      ],
+      "year": 1901,
+      "director": "Bathroom",
+      "actor": "Stainless Steel",
+      "rated": "Manual",
+      "genres": [
+        "Hygiene",
+        "Household"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Hair Dryer",
+      "aliases": [
+        "blow dryer"
+      ],
+      "year": 1920,
+      "director": "Bathroom",
+      "actor": "Plastic & Metal",
+      "rated": "Electric",
+      "genres": [
+        "Hygiene",
+        "Appliance"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Alarm Clock",
+      "aliases": [
+        "clock"
+      ],
+      "year": 1847,
+      "director": "Home & Ceiling",
+      "actor": "Metal & Glass",
+      "rated": "Battery",
+      "genres": [
+        "Timekeeping",
+        "Household"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Blender",
+      "aliases": [
+        "kitchen blender"
+      ],
+      "year": 1922,
+      "director": "Kitchen",
+      "actor": "Glass & Steel",
+      "rated": "Electric",
+      "genres": [
+        "Cooking",
+        "Appliance"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Rolling Pin",
+      "aliases": [
+        "dough roller"
+      ],
+      "year": 1600,
+      "director": "Kitchen",
+      "actor": "Solid Wood",
+      "rated": "Manual",
+      "genres": [
+        "Cooking",
+        "Kitchen"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Whisk",
+      "aliases": [
+        "egg whisk",
+        "balloon whisk"
+      ],
+      "year": 1841,
+      "director": "Kitchen",
+      "actor": "Stainless Steel",
+      "rated": "Manual",
+      "genres": [
+        "Cooking",
+        "Kitchen"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Spatula",
+      "aliases": [
+        "turner",
+        "flipper"
+      ],
+      "year": 1850,
+      "director": "Kitchen",
+      "actor": "Silicone & Steel",
+      "rated": "Manual",
+      "genres": [
+        "Cooking",
+        "Kitchen"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Corkscrew",
+      "aliases": [
+        "wine opener"
+      ],
+      "year": 1795,
+      "director": "Kitchen",
+      "actor": "Stainless Steel",
+      "rated": "Manual",
+      "genres": [
+        "Drinkware",
+        "Kitchen"
+      ],
+      "studio": "Pocket-Sized"
+    },
+    {
+      "name": "Can Opener",
+      "aliases": [
+        "tin opener"
+      ],
+      "year": 1858,
+      "director": "Kitchen",
+      "actor": "Stainless Steel",
+      "rated": "Manual",
+      "genres": [
+        "Cooking",
+        "Kitchen"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Fork",
+      "aliases": [
+        "dinner fork"
+      ],
+      "year": 1000,
+      "director": "Kitchen",
+      "actor": "Stainless Steel",
+      "rated": "Manual",
+      "genres": [
+        "Cooking",
+        "Kitchen"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Spoon",
+      "aliases": [
+        "tablespoon",
+        "teaspoon"
+      ],
+      "year": 1000,
+      "director": "Kitchen",
+      "actor": "Stainless Steel",
+      "rated": "Manual",
+      "genres": [
+        "Cooking",
+        "Kitchen"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Water Bottle",
+      "aliases": [
+        "thermos",
+        "flask"
+      ],
+      "year": 1892,
+      "director": "Everyday Carry",
+      "actor": "Stainless Steel",
+      "rated": "Manual",
+      "genres": [
+        "Drinkware",
+        "Outdoor"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Suitcase",
+      "aliases": [
+        "luggage"
+      ],
+      "year": 1896,
+      "director": "Everyday Carry",
+      "actor": "Polycarbonate",
+      "rated": "Manual",
+      "genres": [
+        "Storage",
+        "Travel"
+      ],
+      "studio": "Large"
+    },
+    {
+      "name": "Wallet",
+      "aliases": [
+        "billfold",
+        "purse"
+      ],
+      "year": 1690,
+      "director": "Everyday Carry",
+      "actor": "Leather",
+      "rated": "Manual",
+      "genres": [
+        "Storage",
+        "Accessory"
+      ],
+      "studio": "Pocket-Sized"
+    },
+    {
+      "name": "Sunglasses",
+      "aliases": [
+        "shades",
+        "aviators"
+      ],
+      "year": 1929,
+      "director": "Everyday Carry",
+      "actor": "Glass & Metal",
+      "rated": "Manual",
+      "genres": [
+        "Vision",
+        "Accessory"
+      ],
+      "studio": "Wearable"
+    },
+    {
+      "name": "Violin",
+      "aliases": [
+        "fiddle"
+      ],
+      "year": 1530,
+      "director": "Music & Stage",
+      "actor": "Wood & Strings",
+      "rated": "Manual",
+      "genres": [
+        "Music",
+        "Instrument"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Trumpet",
+      "aliases": [
+        "brass horn"
+      ],
+      "year": 1500,
+      "director": "Music & Stage",
+      "actor": "Brass",
+      "rated": "Manual",
+      "genres": [
+        "Music",
+        "Instrument"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Piano",
+      "aliases": [
+        "grand piano"
+      ],
+      "year": 1700,
+      "director": "Music & Stage",
+      "actor": "Wood & Ivory",
+      "rated": "Manual",
+      "genres": [
+        "Music",
+        "Instrument"
+      ],
+      "studio": "Large"
+    },
+    {
+      "name": "Vinyl Record",
+      "aliases": [
+        "vinyl",
+        "lp record"
+      ],
+      "year": 1948,
+      "director": "Music & Stage",
+      "actor": "Polyvinyl",
+      "rated": "Manual",
+      "genres": [
+        "Audio",
+        "Music"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Game Controller",
+      "aliases": [
+        "gamepad",
+        "joystick"
+      ],
+      "year": 1983,
+      "director": "Home & Ceiling",
+      "actor": "Plastic & Silicon",
+      "rated": "Battery",
+      "genres": [
+        "Computing",
+        "Sports"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Remote Control",
+      "aliases": [
+        "tv remote"
+      ],
+      "year": 1956,
+      "director": "Home & Ceiling",
+      "actor": "Plastic & Silicon",
+      "rated": "Battery",
+      "genres": [
+        "Computing",
+        "Household"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Clothing Iron",
+      "aliases": [
+        "steam iron",
+        "iron"
+      ],
+      "year": 1882,
+      "director": "Home & Ceiling",
+      "actor": "Steel & Plastic",
+      "rated": "Electric",
+      "genres": [
+        "Household",
+        "Appliance"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Vacuum Cleaner",
+      "aliases": [
+        "vacuum",
+        "hoover"
+      ],
+      "year": 1901,
+      "director": "Home & Ceiling",
+      "actor": "Plastic & Motor",
+      "rated": "Electric",
+      "genres": [
+        "Household",
+        "Appliance"
+      ],
+      "studio": "Large"
+    },
+    {
+      "name": "Ceiling Fan",
+      "aliases": [
+        "electric fan",
+        "desk fan"
+      ],
+      "year": 1882,
+      "director": "Home & Ceiling",
+      "actor": "Metal & Blades",
+      "rated": "Electric",
+      "genres": [
+        "Household",
+        "Appliance"
+      ],
+      "studio": "Large"
+    },
+    {
+      "name": "Broom",
+      "aliases": [
+        "sweeping broom"
+      ],
+      "year": 1797,
+      "director": "Home & Ceiling",
+      "actor": "Wood & Straw",
+      "rated": "Manual",
+      "genres": [
+        "Household",
+        "Tools"
+      ],
+      "studio": "Large"
+    },
+    {
+      "name": "Watering Can",
+      "aliases": [
+        "garden watering can"
+      ],
+      "year": 1692,
+      "director": "Outdoor",
+      "actor": "Galvanized Tin",
+      "rated": "Manual",
+      "genres": [
+        "Outdoor",
+        "Tools"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Wheelbarrow",
+      "aliases": [
+        "garden cart"
+      ],
+      "year": 1200,
+      "director": "Outdoor",
+      "actor": "Steel & Rubber",
+      "rated": "Manual",
+      "genres": [
+        "Outdoor",
+        "Tools"
+      ],
+      "studio": "Large"
+    },
+    {
+      "name": "Skateboard",
+      "aliases": [
+        "penny board",
+        "longboard"
+      ],
+      "year": 1950,
+      "director": "Outdoor",
+      "actor": "Wood & Urethane",
+      "rated": "Manual",
+      "genres": [
+        "Transport",
+        "Sports"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Tennis Racket",
+      "aliases": [
+        "racquet"
+      ],
+      "year": 1874,
+      "director": "Outdoor",
+      "actor": "Graphite & Nylon",
+      "rated": "Manual",
+      "genres": [
+        "Sports",
+        "Outdoor"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Bowling Pin",
+      "aliases": [
+        "skittle"
+      ],
+      "year": 1895,
+      "director": "Outdoor",
+      "actor": "Maple Wood",
+      "rated": "Manual",
+      "genres": [
+        "Sports",
+        "Classic"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Chess Knight",
+      "aliases": [
+        "chess piece",
+        "knight"
+      ],
+      "year": 600,
+      "director": "Office & Desk",
+      "actor": "Carved Wood",
+      "rated": "Manual",
+      "genres": [
+        "Classic",
+        "Sports"
+      ],
+      "studio": "Pocket-Sized"
+    },
+    {
+      "name": "Globe",
+      "aliases": [
+        "world globe"
+      ],
+      "year": 1492,
+      "director": "Office & Desk",
+      "actor": "Paper & Metal",
+      "rated": "Manual",
+      "genres": [
+        "Science",
+        "Office"
+      ],
+      "studio": "Medium"
+    },
+    {
+      "name": "Stethoscope",
+      "aliases": [
+        "doctor stethoscope"
+      ],
+      "year": 1816,
+      "director": "Office & Desk",
+      "actor": "Rubber & Steel",
+      "rated": "Manual",
+      "genres": [
+        "Science",
+        "Audio"
+      ],
+      "studio": "Wearable"
+    },
+    {
+      "name": "Thermometer",
+      "aliases": [
+        "mercury thermometer"
+      ],
+      "year": 1714,
+      "director": "Bathroom",
+      "actor": "Glass & Mercury",
+      "rated": "Manual",
+      "genres": [
+        "Science",
+        "Hygiene"
+      ],
+      "studio": "Handheld"
+    },
+    {
+      "name": "Safety Pin",
+      "aliases": [
+        "pin"
+      ],
+      "year": 1849,
+      "director": "Everyday Carry",
+      "actor": "Spring Steel",
+      "rated": "Manual",
+      "genres": [
+        "Craft",
+        "Accessory"
+      ],
+      "studio": "Pocket-Sized"
+    }
+  ],
+  "superheroes": [
+    {
+      "name": "Superman",
+      "aliases": [
+        "clark kent",
+        "kal-el",
+        "man of steel"
+      ],
+      "year": 1938,
+      "director": "DC Comics",
+      "actor": "Clark Kent",
+      "rated": "Kryptonian",
+      "genres": [
+        "Flight & Strength",
+        "Justice League"
+      ],
+      "studio": "Metropolis"
+    },
+    {
+      "name": "The Flash",
+      "aliases": [
+        "barry allen",
+        "wally west",
+        "flash"
+      ],
+      "year": 1940,
+      "director": "DC Comics",
+      "actor": "Barry Allen",
+      "rated": "Speed Force",
+      "genres": [
+        "Super Speed",
+        "Justice League"
+      ],
+      "studio": "Central City"
+    },
+    {
+      "name": "Aquaman",
+      "aliases": [
+        "arthur curry"
+      ],
+      "year": 1941,
+      "director": "DC Comics",
+      "actor": "Arthur Curry",
+      "rated": "Atlantean",
+      "genres": [
+        "Marine Telepathy",
+        "Justice League"
+      ],
+      "studio": "Atlantis"
+    },
+    {
+      "name": "Green Lantern",
+      "aliases": [
+        "hal jordan",
+        "john stewart"
+      ],
+      "year": 1940,
+      "director": "DC Comics",
+      "actor": "Hal Jordan",
+      "rated": "Power Ring",
+      "genres": [
+        "Energy Constructs",
+        "Justice League"
+      ],
+      "studio": "Coast City"
+    },
+    {
+      "name": "Nightwing",
+      "aliases": [
+        "dick grayson",
+        "robin"
+      ],
+      "year": 1940,
+      "director": "DC Comics",
+      "actor": "Dick Grayson",
+      "rated": "Tech & Martial Arts",
+      "genres": [
+        "Acrobat",
+        "Teen Titans"
+      ],
+      "studio": "Bl\u00fcdhaven"
+    },
+    {
+      "name": "Supergirl",
+      "aliases": [
+        "kara zor-el"
+      ],
+      "year": 1959,
+      "director": "DC Comics",
+      "actor": "Kara Zor-El",
+      "rated": "Kryptonian",
+      "genres": [
+        "Flight & Strength",
+        "Justice League"
+      ],
+      "studio": "National City"
+    },
+    {
+      "name": "Cyborg",
+      "aliases": [
+        "victor stone"
+      ],
+      "year": 1980,
+      "director": "DC Comics",
+      "actor": "Victor Stone",
+      "rated": "Tech & Armor",
+      "genres": [
+        "Cybernetics",
+        "Teen Titans"
+      ],
+      "studio": "Detroit"
+    },
+    {
+      "name": "Raven",
+      "aliases": [
+        "rachel roth"
+      ],
+      "year": 1980,
+      "director": "DC Comics",
+      "actor": "Rachel Roth",
+      "rated": "Magic",
+      "genres": [
+        "Empath",
+        "Teen Titans"
+      ],
+      "studio": "Azarath"
+    },
+    {
+      "name": "Starfire",
+      "aliases": [
+        "koriand'r"
+      ],
+      "year": 1980,
+      "director": "DC Comics",
+      "actor": "Koriand'r",
+      "rated": "Alien",
+      "genres": [
+        "Starbolts",
+        "Teen Titans"
+      ],
+      "studio": "Tamaran"
+    },
+    {
+      "name": "Shazam",
+      "aliases": [
+        "billy batson"
+      ],
+      "year": 1939,
+      "director": "DC Comics",
+      "actor": "Billy Batson",
+      "rated": "Divine Power",
+      "genres": [
+        "Magic Lightning",
+        "Justice League"
+      ],
+      "studio": "Fawcett City"
+    },
+    {
+      "name": "Green Arrow",
+      "aliases": [
+        "oliver queen"
+      ],
+      "year": 1941,
+      "director": "DC Comics",
+      "actor": "Oliver Queen",
+      "rated": "Tech & Martial Arts",
+      "genres": [
+        "Archer",
+        "Justice League"
+      ],
+      "studio": "Star City"
+    },
+    {
+      "name": "John Constantine",
+      "aliases": [
+        "constantine",
+        "hellblazer"
+      ],
+      "year": 1985,
+      "director": "DC Comics",
+      "actor": "John Constantine",
+      "rated": "Magic",
+      "genres": [
+        "Occult Detective",
+        "Justice League Dark"
+      ],
+      "studio": "London"
+    },
+    {
+      "name": "Blue Beetle",
+      "aliases": [
+        "jaime reyes"
+      ],
+      "year": 2006,
+      "director": "DC Comics",
+      "actor": "Jaime Reyes",
+      "rated": "Tech & Armor",
+      "genres": [
+        "Alien Scarab",
+        "Teen Titans"
+      ],
+      "studio": "El Paso"
+    },
+    {
+      "name": "Thor",
+      "aliases": [
+        "thor odinson",
+        "god of thunder"
+      ],
+      "year": 1962,
+      "director": "Marvel Comics",
+      "actor": "Thor Odinson",
+      "rated": "Divine Power",
+      "genres": [
+        "Thunder God",
+        "Avenger"
+      ],
+      "studio": "Asgard"
+    },
+    {
+      "name": "Hulk",
+      "aliases": [
+        "bruce banner",
+        "incredible hulk"
+      ],
+      "year": 1962,
+      "director": "Marvel Comics",
+      "actor": "Bruce Banner",
+      "rated": "Gamma Mutate",
+      "genres": [
+        "Super Strength",
+        "Avenger"
+      ],
+      "studio": "Dayton"
+    },
+    {
+      "name": "Black Panther",
+      "aliases": [
+        "t'challa",
+        "tchalla"
+      ],
+      "year": 1966,
+      "director": "Marvel Comics",
+      "actor": "T'Challa",
+      "rated": "Vibranium & Herb",
+      "genres": [
+        "King",
+        "Avenger"
+      ],
+      "studio": "Wakanda"
+    },
+    {
+      "name": "Black Widow",
+      "aliases": [
+        "natasha romanoff"
+      ],
+      "year": 1964,
+      "director": "Marvel Comics",
+      "actor": "Natasha Romanoff",
+      "rated": "Tech & Martial Arts",
+      "genres": [
+        "Espionage",
+        "Avenger"
+      ],
+      "studio": "Stalingrad"
+    },
+    {
+      "name": "Scarlet Witch",
+      "aliases": [
+        "wanda maximoff"
+      ],
+      "year": 1964,
+      "director": "Marvel Comics",
+      "actor": "Wanda Maximoff",
+      "rated": "Magic",
+      "genres": [
+        "Chaos Magic",
+        "Avenger"
+      ],
+      "studio": "Sokovia"
+    },
+    {
+      "name": "Daredevil",
+      "aliases": [
+        "matt murdock"
+      ],
+      "year": 1964,
+      "director": "Marvel Comics",
+      "actor": "Matt Murdock",
+      "rated": "Street-Level",
+      "genres": [
+        "Radar Sense",
+        "Defender"
+      ],
+      "studio": "Hell's Kitchen"
+    },
+    {
+      "name": "Moon Knight",
+      "aliases": [
+        "marc spector",
+        "steven grant"
+      ],
+      "year": 1975,
+      "director": "Marvel Comics",
+      "actor": "Marc Spector",
+      "rated": "Divine Power",
+      "genres": [
+        "Vigilante",
+        "Defender"
+      ],
+      "studio": "New York City"
+    },
+    {
+      "name": "Storm",
+      "aliases": [
+        "ororo munroe"
+      ],
+      "year": 1975,
+      "director": "Marvel Comics",
+      "actor": "Ororo Munroe",
+      "rated": "Mutant",
+      "genres": [
+        "Weather Control",
+        "X-Men"
+      ],
+      "studio": "Cairo / NYC"
+    },
+    {
+      "name": "Cyclops",
+      "aliases": [
+        "scott summers"
+      ],
+      "year": 1963,
+      "director": "Marvel Comics",
+      "actor": "Scott Summers",
+      "rated": "Mutant",
+      "genres": [
+        "Optic Blasts",
+        "X-Men"
+      ],
+      "studio": "Westchester"
+    },
+    {
+      "name": "Jean Grey",
+      "aliases": [
+        "phoenix"
+      ],
+      "year": 1963,
+      "director": "Marvel Comics",
+      "actor": "Jean Grey",
+      "rated": "Mutant",
+      "genres": [
+        "Telepathy",
+        "X-Men"
+      ],
+      "studio": "Westchester"
+    },
+    {
+      "name": "Nightcrawler",
+      "aliases": [
+        "kurt wagner"
+      ],
+      "year": 1975,
+      "director": "Marvel Comics",
+      "actor": "Kurt Wagner",
+      "rated": "Mutant",
+      "genres": [
+        "Teleportation",
+        "X-Men"
+      ],
+      "studio": "Bavaria"
+    },
+    {
+      "name": "Gambit",
+      "aliases": [
+        "remy lebeau"
+      ],
+      "year": 1990,
+      "director": "Marvel Comics",
+      "actor": "Remy LeBeau",
+      "rated": "Mutant",
+      "genres": [
+        "Kinetic Cards",
+        "X-Men"
+      ],
+      "studio": "New Orleans"
+    },
+    {
+      "name": "Silver Surfer",
+      "aliases": [
+        "norrin radd"
+      ],
+      "year": 1966,
+      "director": "Marvel Comics",
+      "actor": "Norrin Radd",
+      "rated": "Power Cosmic",
+      "genres": [
+        "Cosmic",
+        "Defender"
+      ],
+      "studio": "Zenn-La"
+    },
+    {
+      "name": "Ghost Rider",
+      "aliases": [
+        "johnny blaze"
+      ],
+      "year": 1972,
+      "director": "Marvel Comics",
+      "actor": "Johnny Blaze",
+      "rated": "Magic",
+      "genres": [
+        "Penance Stare",
+        "Anti-Hero"
+      ],
+      "studio": "Waukegan"
+    },
+    {
+      "name": "Blade",
+      "aliases": [
+        "eric brooks"
+      ],
+      "year": 1973,
+      "director": "Marvel Comics",
+      "actor": "Eric Brooks",
+      "rated": "Dhampir",
+      "genres": [
+        "Vampire Hunter",
+        "Anti-Hero"
+      ],
+      "studio": "London"
+    },
+    {
+      "name": "Invincible",
+      "aliases": [
+        "mark grayson"
+      ],
+      "year": 2003,
+      "director": "Image Comics",
+      "actor": "Mark Grayson",
+      "rated": "Viltrumite",
+      "genres": [
+        "Flight & Strength",
+        "Guardians"
+      ],
+      "studio": "Chicago"
+    },
+    {
+      "name": "Spawn",
+      "aliases": [
+        "al simmons"
+      ],
+      "year": 1992,
+      "director": "Image Comics",
+      "actor": "Al Simmons",
+      "rated": "Hellspawn",
+      "genres": [
+        "Necroplasm",
+        "Anti-Hero"
+      ],
+      "studio": "New York City"
+    },
+    {
+      "name": "Hellboy",
+      "aliases": [
+        "anung un rama"
+      ],
+      "year": 1993,
+      "director": "Dark Horse Comics",
+      "actor": "Anung Un Rama",
+      "rated": "Demon",
+      "genres": [
+        "Occult Investigator",
+        "B.P.R.D."
+      ],
+      "studio": "East Bromwich"
+    }
+  ],
+  "games": [
+    {
+      "name": "The Witcher 3: Wild Hunt",
+      "aliases": [
+        "witcher 3",
+        "geralt"
+      ],
+      "year": 2015,
+      "director": "CD Projekt Red",
+      "actor": "Geralt of Rivia",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Action RPG",
+        "Open-World"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Red Dead Redemption 2",
+      "aliases": [
+        "rdr2",
+        "arthur morgan"
+      ],
+      "year": 2018,
+      "director": "Rockstar Games",
+      "actor": "Arthur Morgan",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Open-World",
+        "Action-Adventure"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Hollow Knight",
+      "aliases": [
+        "the knight",
+        "hornet"
+      ],
+      "year": 2017,
+      "director": "Team Cherry",
+      "actor": "The Knight",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Metroidvania",
+        "Indie"
+      ],
+      "studio": "E10+"
+    },
+    {
+      "name": "Stardew Valley",
+      "aliases": [
+        "stardew"
+      ],
+      "year": 2016,
+      "director": "ConcernedApe",
+      "actor": "The Farmer",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Simulation",
+        "Indie"
+      ],
+      "studio": "E10+"
+    },
+    {
+      "name": "Undertale",
+      "aliases": [
+        "sans",
+        "frisk"
+      ],
+      "year": 2015,
+      "director": "Toby Fox",
+      "actor": "Frisk",
+      "rated": "Multi-Platform",
+      "genres": [
+        "RPG",
+        "Indie"
+      ],
+      "studio": "E10+"
+    },
+    {
+      "name": "Celeste",
+      "aliases": [
+        "madeline"
+      ],
+      "year": 2018,
+      "director": "Maddy Makes Games",
+      "actor": "Madeline",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Platformer",
+        "Indie"
+      ],
+      "studio": "E10+"
+    },
+    {
+      "name": "Hades",
+      "aliases": [
+        "zagreus"
+      ],
+      "year": 2020,
+      "director": "Supergiant Games",
+      "actor": "Zagreus",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Roguelike",
+        "Action RPG"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "Cuphead",
+      "aliases": [
+        "cuphead and mugman"
+      ],
+      "year": 2017,
+      "director": "Studio MDHR",
+      "actor": "Cuphead",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Run and Gun",
+        "Indie"
+      ],
+      "studio": "E10+"
+    },
+    {
+      "name": "Disco Elysium",
+      "aliases": [
+        "harrier du bois"
+      ],
+      "year": 2019,
+      "director": "ZA/UM",
+      "actor": "Harrier Du Bois",
+      "rated": "Multi-Platform",
+      "genres": [
+        "RPG",
+        "Detective"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Outer Wilds",
+      "aliases": [
+        "hearthian"
+      ],
+      "year": 2019,
+      "director": "Mobius Digital",
+      "actor": "The Hatchling",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Exploration",
+        "Mystery"
+      ],
+      "studio": "E10+"
+    },
+    {
+      "name": "Portal 2",
+      "aliases": [
+        "portal",
+        "glados",
+        "chell"
+      ],
+      "year": 2011,
+      "director": "Valve",
+      "actor": "Chell",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Puzzle",
+        "First-Person"
+      ],
+      "studio": "E10+"
+    },
+    {
+      "name": "Half-Life 2",
+      "aliases": [
+        "half life",
+        "gordon freeman"
+      ],
+      "year": 2004,
+      "director": "Valve",
+      "actor": "Gordon Freeman",
+      "rated": "PC",
+      "genres": [
+        "FPS",
+        "Sci-Fi"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Team Fortress 2",
+      "aliases": [
+        "tf2"
+      ],
+      "year": 2007,
+      "director": "Valve",
+      "actor": "The Heavy",
+      "rated": "PC",
+      "genres": [
+        "FPS",
+        "Multiplayer"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Counter-Strike 2",
+      "aliases": [
+        "csgo",
+        "counter strike"
+      ],
+      "year": 2012,
+      "director": "Valve",
+      "actor": "Counter-Terrorist",
+      "rated": "PC",
+      "genres": [
+        "FPS",
+        "Tactical"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Valorant",
+      "aliases": [
+        "jett",
+        "sage"
+      ],
+      "year": 2020,
+      "director": "Riot Games",
+      "actor": "Jett",
+      "rated": "PC",
+      "genres": [
+        "FPS",
+        "Tactical"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "League of Legends",
+      "aliases": [
+        "lol",
+        "jinx"
+      ],
+      "year": 2009,
+      "director": "Riot Games",
+      "actor": "Jinx",
+      "rated": "PC",
+      "genres": [
+        "MOBA",
+        "Strategy"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "Overwatch",
+      "aliases": [
+        "tracer"
+      ],
+      "year": 2016,
+      "director": "Blizzard Entertainment",
+      "actor": "Tracer",
+      "rated": "Multi-Platform",
+      "genres": [
+        "FPS",
+        "Hero Shooter"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "World of Warcraft",
+      "aliases": [
+        "wow",
+        "arthas"
+      ],
+      "year": 2004,
+      "director": "Blizzard Entertainment",
+      "actor": "Arthas Menethil",
+      "rated": "PC",
+      "genres": [
+        "MMORPG",
+        "Fantasy"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "Dark Souls",
+      "aliases": [
+        "chosen undead"
+      ],
+      "year": 2011,
+      "director": "FromSoftware",
+      "actor": "Chosen Undead",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Action RPG",
+        "Soulslike"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Bloodborne",
+      "aliases": [
+        "the hunter"
+      ],
+      "year": 2015,
+      "director": "FromSoftware",
+      "actor": "The Good Hunter",
+      "rated": "PlayStation",
+      "genres": [
+        "Action RPG",
+        "Soulslike"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Sekiro: Shadows Die Twice",
+      "aliases": [
+        "sekiro",
+        "wolf"
+      ],
+      "year": 2019,
+      "director": "FromSoftware",
+      "actor": "Wolf",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Action-Adventure",
+        "Stealth"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Baldur's Gate 3",
+      "aliases": [
+        "bg3",
+        "astarion"
+      ],
+      "year": 2023,
+      "director": "Larian Studios",
+      "actor": "Tav / Astarion",
+      "rated": "Multi-Platform",
+      "genres": [
+        "RPG",
+        "Strategy"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "The Elder Scrolls V: Skyrim",
+      "aliases": [
+        "skyrim",
+        "dragonborn"
+      ],
+      "year": 2011,
+      "director": "Bethesda Game Studios",
+      "actor": "Dragonborn",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Action RPG",
+        "Open-World"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Fallout: New Vegas",
+      "aliases": [
+        "fallout",
+        "courier"
+      ],
+      "year": 2010,
+      "director": "Obsidian Entertainment",
+      "actor": "The Courier",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Action RPG",
+        "Open-World"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Cyberpunk 2077",
+      "aliases": [
+        "v",
+        "johnny silverhand"
+      ],
+      "year": 2020,
+      "director": "CD Projekt Red",
+      "actor": "V",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Action RPG",
+        "Sci-Fi"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "The Last of Us",
+      "aliases": [
+        "joel and ellie"
+      ],
+      "year": 2013,
+      "director": "Naughty Dog",
+      "actor": "Joel & Ellie",
+      "rated": "PlayStation",
+      "genres": [
+        "Action-Adventure",
+        "Survival"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Uncharted 4: A Thief's End",
+      "aliases": [
+        "uncharted",
+        "nathan drake"
+      ],
+      "year": 2016,
+      "director": "Naughty Dog",
+      "actor": "Nathan Drake",
+      "rated": "PlayStation",
+      "genres": [
+        "Action-Adventure",
+        "Shooter"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "Ghost of Tsushima",
+      "aliases": [
+        "jin sakai"
+      ],
+      "year": 2020,
+      "director": "Sucker Punch",
+      "actor": "Jin Sakai",
+      "rated": "PlayStation",
+      "genres": [
+        "Action-Adventure",
+        "Open-World"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Persona 5",
+      "aliases": [
+        "joker persona 5"
+      ],
+      "year": 2016,
+      "director": "Atlus",
+      "actor": "Joker (Ren Amamiya)",
+      "rated": "Multi-Platform",
+      "genres": [
+        "JRPG",
+        "Social Sim"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Final Fantasy VII",
+      "aliases": [
+        "ff7",
+        "cloud strife"
+      ],
+      "year": 1997,
+      "director": "Square",
+      "actor": "Cloud Strife",
+      "rated": "PlayStation",
+      "genres": [
+        "JRPG",
+        "Sci-Fi"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "Chrono Trigger",
+      "aliases": [
+        "crono"
+      ],
+      "year": 1995,
+      "director": "Square",
+      "actor": "Crono",
+      "rated": "Nintendo",
+      "genres": [
+        "JRPG",
+        "Adventure"
+      ],
+      "studio": "E"
+    },
+    {
+      "name": "Shadow of the Colossus",
+      "aliases": [
+        "wander"
+      ],
+      "year": 2005,
+      "director": "Team Ico",
+      "actor": "Wander",
+      "rated": "PlayStation",
+      "genres": [
+        "Action-Adventure",
+        "Puzzle"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "Resident Evil 4",
+      "aliases": [
+        "re4",
+        "leon kennedy"
+      ],
+      "year": 2005,
+      "director": "Capcom",
+      "actor": "Leon S. Kennedy",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Survival Horror",
+        "Action"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Silent Hill 2",
+      "aliases": [
+        "james sunderland",
+        "pyramid head"
+      ],
+      "year": 2001,
+      "director": "Konami",
+      "actor": "James Sunderland",
+      "rated": "PlayStation",
+      "genres": [
+        "Survival Horror",
+        "Psychological"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Metal Gear Solid",
+      "aliases": [
+        "solid snake"
+      ],
+      "year": 1998,
+      "director": "Konami",
+      "actor": "Solid Snake",
+      "rated": "PlayStation",
+      "genres": [
+        "Stealth",
+        "Action"
+      ],
+      "studio": "M"
+    },
+    {
+      "name": "Subnautica",
+      "aliases": [
+        "ryley robinson"
+      ],
+      "year": 2018,
+      "director": "Unknown Worlds",
+      "actor": "Ryley Robinson",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Survival",
+        "Exploration"
+      ],
+      "studio": "E10+"
+    },
+    {
+      "name": "Terraria",
+      "aliases": [
+        "terraria 2011"
+      ],
+      "year": 2011,
+      "director": "Re-Logic",
+      "actor": "The Guide",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Sandbox",
+        "Adventure"
+      ],
+      "studio": "T"
+    },
+    {
+      "name": "Tetris",
+      "aliases": [
+        "tetromino"
+      ],
+      "year": 1984,
+      "director": "Alexey Pajitnov",
+      "actor": "Tetrominoes",
+      "rated": "Multi-Platform",
+      "genres": [
+        "Puzzle",
+        "Arcade"
+      ],
+      "studio": "E"
+    }
+  ],
+  "characters": [
+    {
+      "name": "Walter White",
+      "aliases": [
+        "heisenberg"
+      ],
+      "year": 2008,
+      "director": "Television",
+      "actor": "Breaking Bad",
+      "rated": "Human Chemist",
+      "genres": [
+        "Crime",
+        "Anti-Hero"
+      ],
+      "studio": "Vince Gilligan"
+    },
+    {
+      "name": "Saul Goodman",
+      "aliases": [
+        "jimmy mcgill"
+      ],
+      "year": 2009,
+      "director": "Television",
+      "actor": "Better Call Saul",
+      "rated": "Human Lawyer",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "studio": "Vince Gilligan"
+    },
+    {
+      "name": "Homer Simpson",
+      "aliases": [
+        "homer"
+      ],
+      "year": 1987,
+      "director": "Animation",
+      "actor": "The Simpsons",
+      "rated": "Human",
+      "genres": [
+        "Comedy",
+        "Sitcom"
+      ],
+      "studio": "Matt Groening"
+    },
+    {
+      "name": "SpongeBob SquarePants",
+      "aliases": [
+        "spongebob"
+      ],
+      "year": 1999,
+      "director": "Animation",
+      "actor": "Bikini Bottom",
+      "rated": "Sea Sponge",
+      "genres": [
+        "Comedy",
+        "Animation"
+      ],
+      "studio": "Stephen Hillenburg"
+    },
+    {
+      "name": "Rick Sanchez",
+      "aliases": [
+        "rick and morty"
+      ],
+      "year": 2013,
+      "director": "Animation",
+      "actor": "Rick and Morty",
+      "rated": "Human Scientist",
+      "genres": [
+        "Sci-Fi",
+        "Comedy"
+      ],
+      "studio": "Justin Roiland & Dan Harmon"
+    },
+    {
+      "name": "Aang",
+      "aliases": [
+        "avatar aang"
+      ],
+      "year": 2005,
+      "director": "Animation",
+      "actor": "Avatar: The Last Airbender",
+      "rated": "Avatar Airbender",
+      "genres": [
+        "Fantasy",
+        "Hero"
+      ],
+      "studio": "Michael Dante DiMartino"
+    },
+    {
+      "name": "Zuko",
+      "aliases": [
+        "prince zuko"
+      ],
+      "year": 2005,
+      "director": "Animation",
+      "actor": "Avatar: The Last Airbender",
+      "rated": "Firebender",
+      "genres": [
+        "Fantasy",
+        "Redemption"
+      ],
+      "studio": "Bryan Konietzko"
+    },
+    {
+      "name": "Indiana Jones",
+      "aliases": [
+        "henry jones jr",
+        "indy"
+      ],
+      "year": 1981,
+      "director": "Film",
+      "actor": "Indiana Jones",
+      "rated": "Human Archaeologist",
+      "genres": [
+        "Adventure",
+        "Hero"
+      ],
+      "studio": "George Lucas"
+    },
+    {
+      "name": "Ellen Ripley",
+      "aliases": [
+        "ripley"
+      ],
+      "year": 1979,
+      "director": "Film",
+      "actor": "Alien",
+      "rated": "Human Warrant Officer",
+      "genres": [
+        "Sci-Fi",
+        "Survivor"
+      ],
+      "studio": "Ridley Scott"
+    },
+    {
+      "name": "Marty McFly",
+      "aliases": [
+        "mcfly"
+      ],
+      "year": 1985,
+      "director": "Film",
+      "actor": "Back to the Future",
+      "rated": "Human Time Traveler",
+      "genres": [
+        "Sci-Fi",
+        "Hero"
+      ],
+      "studio": "Robert Zemeckis"
+    },
+    {
+      "name": "Hannibal Lecter",
+      "aliases": [
+        "dr hannibal lecter"
+      ],
+      "year": 1981,
+      "director": "Literature & Film",
+      "actor": "Silence of the Lambs",
+      "rated": "Human Psychiatrist",
+      "genres": [
+        "Thriller",
+        "Villain"
+      ],
+      "studio": "Thomas Harris"
+    },
+    {
+      "name": "Gollum",
+      "aliases": [
+        "smeagol"
+      ],
+      "year": 1937,
+      "director": "Literature & Film",
+      "actor": "Middle-earth",
+      "rated": "Stoor Hobbit",
+      "genres": [
+        "Fantasy",
+        "Villain"
+      ],
+      "studio": "J.R.R. Tolkien"
+    },
+    {
+      "name": "Frodo Baggins",
+      "aliases": [
+        "frodo"
+      ],
+      "year": 1954,
+      "director": "Literature & Film",
+      "actor": "Middle-earth",
+      "rated": "Hobbit",
+      "genres": [
+        "Fantasy",
+        "Hero"
+      ],
+      "studio": "J.R.R. Tolkien"
+    },
+    {
+      "name": "Aragorn",
+      "aliases": [
+        "strider",
+        "elessar"
+      ],
+      "year": 1954,
+      "director": "Literature & Film",
+      "actor": "Middle-earth",
+      "rated": "D\u00fanedain Ranger",
+      "genres": [
+        "Fantasy",
+        "Hero"
+      ],
+      "studio": "J.R.R. Tolkien"
+    },
+    {
+      "name": "Jon Snow",
+      "aliases": [
+        "aegon targaryen"
+      ],
+      "year": 1996,
+      "director": "Literature & TV",
+      "actor": "Game of Thrones",
+      "rated": "Human Commander",
+      "genres": [
+        "Fantasy",
+        "Hero"
+      ],
+      "studio": "George R.R. Martin"
+    },
+    {
+      "name": "Tyrion Lannister",
+      "aliases": [
+        "the imp"
+      ],
+      "year": 1996,
+      "director": "Literature & TV",
+      "actor": "Game of Thrones",
+      "rated": "Human Strategist",
+      "genres": [
+        "Fantasy",
+        "Advisor"
+      ],
+      "studio": "George R.R. Martin"
+    },
+    {
+      "name": "Daenerys Targaryen",
+      "aliases": [
+        "khaleesi",
+        "mother of dragons"
+      ],
+      "year": 1996,
+      "director": "Literature & TV",
+      "actor": "Game of Thrones",
+      "rated": "Dragonlord",
+      "genres": [
+        "Fantasy",
+        "Ruler"
+      ],
+      "studio": "George R.R. Martin"
+    },
+    {
+      "name": "Hercule Poirot",
+      "aliases": [
+        "poirot"
+      ],
+      "year": 1920,
+      "director": "Literature",
+      "actor": "Agatha Christie Mysteries",
+      "rated": "Human Detective",
+      "genres": [
+        "Mystery",
+        "Detective"
+      ],
+      "studio": "Agatha Christie"
+    },
+    {
+      "name": "Count Dracula",
+      "aliases": [
+        "dracula"
+      ],
+      "year": 1897,
+      "director": "Literature & Film",
+      "actor": "Gothic Horror",
+      "rated": "Vampire",
+      "genres": [
+        "Horror",
+        "Villain"
+      ],
+      "studio": "Bram Stoker"
+    },
+    {
+      "name": "Frankenstein's Monster",
+      "aliases": [
+        "frankenstein"
+      ],
+      "year": 1818,
+      "director": "Literature & Film",
+      "actor": "Gothic Sci-Fi",
+      "rated": "Reanimated Creature",
+      "genres": [
+        "Horror",
+        "Tragic"
+      ],
+      "studio": "Mary Shelley"
+    },
+    {
+      "name": "Willy Wonka",
+      "aliases": [
+        "wonka"
+      ],
+      "year": 1964,
+      "director": "Literature & Film",
+      "actor": "Charlie and the Chocolate Factory",
+      "rated": "Human Chocolatier",
+      "genres": [
+        "Fantasy",
+        "Eccentric"
+      ],
+      "studio": "Roald Dahl"
+    },
+    {
+      "name": "Shrek",
+      "aliases": [
+        "shrek the ogre"
+      ],
+      "year": 1990,
+      "director": "Animation",
+      "actor": "Shrek",
+      "rated": "Ogre",
+      "genres": [
+        "Comedy",
+        "Hero"
+      ],
+      "studio": "DreamWorks"
+    },
+    {
+      "name": "Sonic the Hedgehog",
+      "aliases": [
+        "sonic"
+      ],
+      "year": 1991,
+      "director": "Games & Film",
+      "actor": "Sonic Franchise",
+      "rated": "Speedster Hedgehog",
+      "genres": [
+        "Action",
+        "Mascot"
+      ],
+      "studio": "Sega"
+    }
+  ]
+}

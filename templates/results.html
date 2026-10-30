@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}Game Results - Guess the Thing 🎯{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="game-card" style="max-width: 860px;">
+        
+        <!-- CELEBRATION HEADER -->
+        <div class="text-center mb-4 pb-3 border-bottom border-secondary-subtle">
+            <div class="fs-1 mb-2">
+                {% if accuracy >= 80 %}🏆
+                {% elif accuracy >= 50 %}🎉
+                {% else %}🎯
+                {% endif %}
+            </div>
+            <h2 class="fw-bold mb-1">Game Over!</h2>
+            <p class="text-secondary mb-2">Here is how well you performed in this challenge:</p>
+            <span class="badge bg-primary px-3 py-2 fs-6 rounded-pill">{{ rank_title }}</span>
+        </div>
+
+        <!-- STATS GRID -->
+        <div class="row g-3 text-center mb-4">
+            <div class="col-6 col-md-3">
+                <div class="feature-card p-3">
+                    <span class="text-secondary small fw-bold d-block mb-1">FINAL SCORE</span>
+                    <span class="fs-3 fw-bold text-primary">{{ score }}</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="feature-card p-3">
+                    <span class="text-secondary small fw-bold d-block mb-1">ACCURACY</span>
+                    <span class="fs-3 fw-bold text-success">{{ accuracy }}%</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="feature-card p-3">
+                    <span class="text-secondary small fw-bold d-block mb-1">BEST STREAK</span>
+                    <span class="fs-3 fw-bold text-warning">🔥 {{ max_streak }}</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="feature-card p-3">
+                    <span class="text-secondary small fw-bold d-block mb-1">CORRECT</span>
+                    <span class="fs-3 fw-bold text-info">{{ correct_count }} / {{ total_questions }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAVE TO LEADERBOARD FORM (IF NOT YET SAVED) -->
+        {% if not score_saved %}
+            <div class="p-4 rounded-4 bg-dark-subtle border border-secondary mb-4">
+                <form action="/save-score" method="POST" class="d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-between">
+                    <div>
+                        <h5 class="fw-bold mb-1">🏆 Save Your High Score</h5>
+                        <p class="text-secondary small mb-0">Record your score of <strong>{{ score }} pts</strong> onto the Hall of Fame!</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <input type="text" name="player_name" class="form-control custom-input" value="{{ player_name }}" placeholder="Your Player Name" required style="min-width: 180px;">
+                        <button type="submit" class="btn btn-primary fw-bold text-nowrap">
+                            Save Score
+                        </button>
+                    </div>
+                </form>
+            </div>
+        {% else %}
+            <div class="alert alert-success d-flex align-items-center gap-2 mb-4">
+                <span>✅</span>
+                <span>Your score was saved to the Leaderboard!</span>
+                <a href="/leaderboard" class="fw-bold ms-auto text-decoration-none">View Hall of Fame &rarr;</a>
+            </div>
+        {% endif %}
+
+        <!-- ROUND BREAKDOWN -->
+        <h5 class="fw-bold mb-3">Round Summary</h5>
+        <div class="table-responsive mb-4">
+            <table class="custom-table w-100">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Target Answer</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in history %}
+                        <tr>
+                            <td class="text-secondary fw-bold">{{ loop.index }}</td>
+                            <td class="fw-bold">{{ item.name }}</td>
+                            <td>
+                                <span class="badge bg-secondary-subtle text-secondary-emphasis">
+                                    {{ item.category|capitalize }}
+                                </span>
+                            </td>
+                            <td>
+                                {% if item.correct %}
+                                    <span class="badge bg-success-subtle text-success">✓ Solved</span>
+                                {% else %}
+                                    <span class="badge bg-danger-subtle text-danger">✗ Missed</span>
+                                {% endif %}
+                            </td>
+                            <td class="fw-bold {% if item.points > 0 %}text-success{% else %}text-secondary{% endif %}">
+                                +{{ item.points }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="d-flex justify-content-center gap-3 flex-wrap pt-2">
+            <a href="/" class="btn btn-primary px-4 py-2 fw-bold">
+                🔄 Play Again
+            </a>
+            <a href="/leaderboard" class="btn btn-outline-light px-4 py-2 fw-bold">
+                🏆 Leaderboard
+            </a>
+            <a href="/categories" class="btn btn-outline-secondary px-4 py-2">
+                🎨 Explore Categories
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
